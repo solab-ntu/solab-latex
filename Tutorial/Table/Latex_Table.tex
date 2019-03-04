@@ -1,0 +1,534 @@
+\documentclass[12pt,a4paper]{report}
+
+% packages
+\usepackage{CJKutf8}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{picinpar,epic}
+\usepackage{subfigure}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage[margin=2cm]{geometry}
+\usepackage{cases}
+\usepackage{multirow} 
+
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{slashbox}
+
+\usepackage{array}
+\usepackage{rotating,booktabs}
+
+
+\makeatletter
+\def\hlinewd#1{
+\noalign{\ifnum0=`}\fi\hrule \@height #1
+\futurelet\reserved@a\@xhline}
+\makeatother
+
+\newcolumntype{k}{!{\vrule width 3pt}}
+
+% \newcommand{\vlinewd#1}{\vrule width #1}
+
+
+
+
+% % line spacing 
+
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]{\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\halfspacing}{\setlength{\baselineskip}{0.30 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{1.20 \defbaselineskip}}
+\newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
+
+
+\renewcommand{\arraystretch}{1.5}
+
+% commands
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand\contentsname{目錄}
+\renewcommand\listfigurename{圖目錄}
+\renewcommand\listtablename{表目錄}
+
+
+\begin{document}
+\begin{CJK}{UTF8}{bkai}
+\titleformat{\chapter}{\Huge}{\textbf{第 \thechapter\ 章}}{1em}{\textbf}
+\thispagestyle{empty}
+\begin{center}
+       ~\\
+        \vspace{6.8cm}
+
+        \textbf{\Huge
+國立台灣大學機械工程學系 \\
+系統最佳化實驗室}
+
+        \vspace{3cm}
+
+        \textbf{\Huge
+	Latex 表格製作簡述
+        }
+        \vspace{11.5cm}
+
+        {\large
+            06/03/2014
+        }
+    \end{center}
+
+\newpage
+
+\tableofcontents
+%\listoffigures
+\listoftables
+
+\thispagestyle{empty}
+~
+\newpage
+
+\chapter{簡易表格應用}
+
+\section{簡易表格}
+當文件中需要使用普通表格(不超過頁面)時，可使用以下指令製表，結果如下表 1.1，注意要點如下：
+\begin{itemize}
+    \item 程式碼第一的 [h] 為強制此表格的相對位置，若不輸入此命令，表格會被自動放置於頁面最上或最下方。
+    \item 程式碼第五行 $| l | c | c |$ 代表第一欄靠左對齊，第二三攔置中對齊。
+    \item 表號指令 "\textbackslash caption"不可寫在 "\textbackslash end\textbraceleft tabular\textbraceright" 後面，否則標註會落於表格下方。
+    \item 如需定義表格長度，可在後面補上長度指令，例如：\textbackslash makebox[3cm] [l] ，其中 [l] 為置左，也可用置中 [c]或置右 [r] 代替。
+    \item {\bf \textcolor{red}{如遭遇表號(caption)打中文而編譯失敗時，可在文件尾端 \textbackslash end \textbraceleft CJK\textbraceright 的前面加入 "\textbackslash clearpage "指令，並刪除.tex檔以外的同名檔案，重新開啟 Latex 即可。}}
+
+\vspace{0.5cm}
+    \item 範例：
+
+\end{itemize}
+
+\begin{lstlisting}
+    \begin{table}[h]
+        \caption{Example 1}
+        \label{t1}
+        \centering
+        \begin{tabular}{|l|c|r|}
+        \hline
+        \makebox[3cm][l]{Name} & Height(cm) & Weight(kg) \\\hline
+        ChangCJ & 175  & 65  \\\hline
+        LaiMC & 171  & 55  \\\hline
+        YenCY & 177  & 70  \\\hline
+        \end{tabular}
+    \end{table}
+\end{lstlisting}
+
+\vspace{-0.5cm}
+    \begin{table}[h]
+        \caption{Example 1}
+        \label{t1}
+        \centering
+        \begin{tabular}{|l|c|r|p|}
+        \hline
+        \makebox[3cm][l]{Name} & Height(cm) & Weight(kg) \\\hline
+        ChangCJ & 175  & 65   \\\hline
+        LaiMC & 171  & 55  \\\hline
+        YenCY & 177  & 70  \\\hline
+        \end{tabular}
+    \end{table}
+
+\newpage
+\section{有斜線的表格}
+當需製作斜線的表格，則需先在Latex套件使用區鍵入\textbackslash usepackage\textbraceleft slashbox\textbraceright ，再使用 \textbackslash backslashbox 或 \textbackslash slashbox 指令即可製作表格，範例如下表 1.2 所示。
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item 範例：
+\end{itemize}
+
+\begin{lstlisting}
+    \begin{table}[h]
+	\begin{center}
+	\caption{Example 2}
+	\begin{tabular}{|c||c|c||c|}\hline
+	\backslashbox{Test}{Property}&\makebox[3cm]{A}&
+	\makebox[3cm]{B}&\slashbox{Property}{Number}\\
+	\hline \hline
+	1 & 2.117 & 12.338 & No.1\\ \hline
+	2 & 2.149 & 11.995 & No.2\\ \hline
+	\end{tabular}
+	\end{center}
+    \end{table}
+\end{lstlisting}
+
+\vspace{-0.5cm}
+\begin{table}[h]
+\begin{center}
+\caption{Example 2}
+\begin{tabular}{|c||c|c||c|}\hline
+\backslashbox{Test}{Property}& \makebox[3cm]{A}& 
+\makebox[3cm]{B}&\slashbox{Property}{Number} \\
+\hline \hline
+ 1 & 2.117 & 12.338 & No.1\\ \hline
+ 2 & 2.149 & 11.995 & No.2\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{調整線寬、空間及文字換行}
+
+\subsection{調整線寬 - 列}
+不需新增套件，但需在文件開始(\textbackslash begin\textbraceleft document\textbraceright)之前鍵入以下編碼，再把需要改線寬\textbackslash hline 的部分改為 \textbackslash hlinewd \textbraceleft width\textbraceright，如 \textbackslash hlinewd \textbraceleft 5pt\textbraceright 即可。\\
+
+\begin{lstlisting}
+	\makeatletter
+	\def\hlinewd#1{
+	\noalign{\ifnum0=`}\fi\hrule \@height #1
+	\futurelet\reserved@a\@xhline}
+	\makeatother
+\end{lstlisting}
+
+\vspace{-0.5cm}
+\begin{table}[h]
+\begin{center}
+\caption{Example 3}
+\begin{tabular}{|c|c|c|} 
+\hlinewd{1pt}
+1 & 2 & 3\\ \hlinewd{3pt}
+4 & 5 & 6\\ \hlinewd{5pt}
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{調整線寬 - 行}
+行寬並無法像列寬能直接鍵入 \textbackslash hlinewd，需自行定義一個代碼(一般預設行線為 $|$)，以在需要更改線寬時使用。若令此代碼為 k，且線寬為 3pt，則在文件開始前，我們需鍵入以下編碼來定義 k。
+\vspace{0.5cm}
+
+\begin{lstlisting}
+	\newcolumntype{k}{!{\vrule width 3pt}}
+\end{lstlisting}
+
+\vspace{0.5cm}
+鍵入該編碼後，即可利用此代碼製作表格(使用時機同 $|$ )，如需多種線寬，則可自行多設定代碼以備使用之需。
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item 範例：
+\end{itemize}
+
+\vspace{-0.5cm}
+\begin{lstlisting}
+	\begin{table}[h]
+	\begin{center}
+	\caption{Example 4}
+	\begin{tabular}{|c k c|c|} \hline
+	1 & 2 & 3  \\ \hlinewd{2pt}
+	4 & 5 & 6  \\ \hlinewd{3pt}
+	\end{tabular}
+	\end{center}
+	\end{table}
+\end{lstlisting}
+
+\vspace{-0.5cm}
+\begin{table}[h] 
+\begin{center}
+\caption{Example 4}
+\begin{tabular}{|c k c|c|} \hline
+1 & 2 & 3  \\ \hlinewd{2pt}
+4 & 5 & 6  \\ \hlinewd{3pt}
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsection{行高和列寬調整}
+當需要調整行高或列寬時，可在製作表格指令(\textbackslash begin\textbraceleft table\textbraceright)後面補上對應編碼，即可設置行高(1)、增減列寬(2)或將表格尺寸最小化(3)。表 1.5 為將表 1.4 列寬增加10pt的結果，其編碼則不再重複提及。\\
+
+\begin{lstlisting}
+	(1) \begin{table} \renewcommand{\arraystretch}{1.5}   
+	(2) \begin{table} \addtolength{\tabcolsep}{10pt}  
+	(3) \begin{table} \small   
+\end{lstlisting}
+
+
+\begin{table}[h] \addtolength{\tabcolsep}{10pt}  
+\begin{center}
+\caption{Example 5}
+\begin{tabular}{|c k c|c|} \hline
+1 & 2 & 3  \\ \hlinewd{2pt}
+4 & 5 & 6  \\ \hlinewd{3pt}
+\end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+\subsection{文字換行}
+若欲對表格的文字換行，則需自行在文件中定義一個命令：\textbackslash tabincell，其編碼如以下所示。定義完畢後，即可用\textbackslash tabincell\textbraceleft \textbraceright 任意對表格內的文字編排(即大括號可使用 \textbackslash\textbackslash 換行，對齊方式仍然可用 c、l、r)。
+
+
+\vspace{0.5cm}
+\begin{lstlisting}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\end{lstlisting}
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item 範例：
+\end{itemize}
+
+\vspace{-0.5cm}
+\begin{lstlisting}
+	\begin{table}[h]
+	\caption{Example 6}
+	\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+ 	\centering
+ 	\begin{tabular}{|c|c|c|}\hline
+	1 & \tabincell{c}{Single \\ Double \\ Triple \\ Quadra \\ Penta} 
+	  & \tabincell{c}{X}\\\hline
+	2 & \tabincell{c}{ S \\ O \\ Lab}
+	  & \tabincell{c}{System \\ Optimization \\ Laboratory} \\\hline
+	\end{tabular}
+	\end{table}
+\end{lstlisting}
+
+
+\vspace{-0.5cm}
+\begin{table}[h]
+ \caption{Example 6}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+  \centering
+  \begin{tabular}{|c|c|c|}\hline
+1 & \tabincell{c}{Single \\ Double \\ Triple \\ Quadra \\ Penta \\ Hexa } 
+   & \tabincell{c}{X}\\\hline
+2 & \tabincell{c}{ S \\ O \\ Lab}
+   & \tabincell{c}{System \\ Optimization \\ Laboratory} \\\hline
+\end{tabular}
+\end{table}
+
+
+\chapter{合併型表格}
+此功能類似Office表格的「合併儲存格」，但Latex編譯此表格則需用線條一一繪出表格，其主要指令意義如下所示：
+	\begin{enumerate}
+	\item \textbackslash multicolumn\textbraceleft 占用欄位數\textbraceright \textbraceleft 對齊方式\textbraceright \textbraceleft 文字內容\textbraceright。
+	\item \textbackslash multirow\textbraceleft 占用列位數\textbraceright \textbraceleft 對齊方式\textbraceright \textbraceleft 文字內容\textbraceright。
+	\item \textbackslash cline \textbraceleft a-b\textbraceright：如 \textbackslash cline \textbraceleft 2-3\textbraceright 為畫第二欄至第三欄的橫線。
+	\end{enumerate}
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item 範例：
+\end{itemize}
+
+\vspace{-0.5cm}
+
+\begin{lstlisting}
+	\begin{table}[h]
+	\begin{center}
+	\caption{Multi Example}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	\multirow{2}{*}{ABC} &
+	\multicolumn{2}{c|}{DEF} &
+	\multicolumn{2}{c|}{\multirow{2}{*}{GHI}} \\
+	\cline{2-3}
+	& 123 & 456 & \multicolumn{2}{c|}{} \\ \hline
+	label-1 & label-2 & label-3 & label-4 & label-5 \\ \hline
+	\end{tabular}
+	\end{center}
+	\end{table}
+\end{lstlisting}
+
+
+
+\begin{table} [h]
+\begin{center}
+\caption{Multi Example}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ABC} &
+\multicolumn{2}{c|}{DEF} &
+\multicolumn{2}{c|}{\multirow{2}{*}{GHI}} \\
+\cline{2-3}
+  & 123 & 456 & \multicolumn{2}{c|}{} \\
+\hline
+label-1 & label-2 & label-3 & label-4 & label-5 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+
+
+
+\chapter{大型表格應用}
+\section{跨頁表格}
+當表格過長，出現跨頁問題時，普通 Latex 的製表指令已無法使用，需改用長表格 \textbackslash\textbraceleft longtable\textbraceright 代替之，使用之要點如下：
+\begin{itemize}
+    \item 需先在Latex套件使用區鍵入\textbackslash usepackage\textbraceleft longtable\textbraceright。
+    \item 表號指令 "\textbackslash caption"不可寫在 "\textbackslash end\textbraceleft tabular\textbraceright" 後面，否則標註會落於表格下方。
+
+\vspace{0.5cm}
+\item 範例：
+\end{itemize}
+
+
+\vspace{-0.5cm}
+\begin{lstlisting}
+	\begin{center}
+	\begin{longtable}{|c|c|c|} 
+	\caption{CVT Components} \label{t1}\\ \hline
+	\multicolumn{1}{|c|}{Components}&
+	\multicolumn{1}{|c|}{Parameters}&
+	\multicolumn{1}{|c|}{Physical Meaning} \\ \hline \hline
+			.
+			.
+			.
+	\multirow{5}*{Moving Plate}&
+	\multicolumn{1}{c|}{$ I_w $}&
+	\multicolumn{1}{c|}{''} \\ 
+	\cline{2-3} & $ \omega_w $ & '' \\
+	\cline{2-3} & $ \alpha $ & '' \\
+	\cline{2-3} & $ \beta_w $ & '' \\
+	\cline{2-3} & $ \mu_{wb} $ &'' \\ \hline
+	\end{longtable}
+	\end{center}
+\end{lstlisting}
+
+\vspace{-0.5cm}
+\begin{center}
+\begin{longtable}{|c|c|c|} 
+\caption{CVT Components} \label{t1}\\
+\hline
+\multicolumn{1}{|c|}{Components}&
+\multicolumn{1}{|c|}{Parameters}&
+\multicolumn{1}{|c|}{Physical Meaning} \\ \hline \hline
+
+\multirow{3}*{Input Shaft}&
+\multicolumn{1}{c|}{$ I_i $}&
+\multicolumn{1}{c|}{Moment of inertia of input shaft } \\ 
+\cline{2-3} & $ \omega_i$ & Angular velocity of input shaft  \\
+\cline{2-3} & $ T_i $ & Torque acting on input shaft \\ \hline \hline
+
+\multirow{3}*{Moving Plate}&
+\multicolumn{1}{c|}{$ I_w $}&
+\multicolumn{1}{c|}{''} \\ 
+\cline{2-3} & $ \omega_w $ & '' \\
+\cline{2-3} & $ \mu_{wb} $ &'' \\ \hline
+\end{longtable}
+\end{center}
+
+
+\section{過寬表格}
+當表格寬度過寬，無法放置在一頁時，可選擇兩種方法改善此問題：
+	\begin{itemize}
+	\item 將表格按比例縮小，此方法需要在文件開始前鍵入 \textbackslash usepackage\textbraceleft graphix\textbraceright，最後使用 \textbackslash resizebox\textbraceleft \textbackslash textwidth\textbraceright \textbraceleft !\textbraceright \textbraceleft 表格程式碼\textbraceright 指令，使表格縮減。但此法可能會造成表格字型和字體，甚至格式的改變問題。
+
+\vspace{0.5cm}
+\begin{lstlisting}
+	\resizebox{\textwidth}{!}{ ... }
+\end{lstlisting}
+
+\vspace{0.5cm}
+	\item 範例：
+\end{itemize}
+
+\vspace{-0.5cm}
+\begin{lstlisting}
+	\begin{center}
+	\begin{table}[h]
+	\resizebox{\textwidth}{!}{ 
+	\begin{tabular}{|l|c|c|}
+	\hline
+	\makebox[3cm][l]{Name} & Height(cm) & Weight(kg) \\\hline
+	ChangCJ & 175  & 65 \\\hline
+	LaiMC & 171  & 55 \\\hline
+	YenCY & 177  & 70 \\\hline
+	\end{tabular}}
+	\end{table}
+	\end{center}
+\end{lstlisting}
+
+	\begin{center}
+	\begin{table}[h]
+	\caption{Sizing Example}
+	\resizebox{\textwidth}{!}{ 
+	\begin{tabular}{|l|c|c|}
+	\hline
+	\makebox[3cm][l]{Name} & Height(cm) & Weight(kg) \\\hline
+	ChangCJ & 175  & 65 \\\hline
+	LaiMC & 171  & 55 \\\hline
+	YenCY & 177  & 70 \\\hline
+	\end{tabular}}
+	\end{table}
+	\end{center}
+
+
+另一方法為：直接旋轉表格90度，使表格能直接放入頁面內。此指令需要用到套件 \textbackslash usepackage\textbraceleft rotating\textbraceright。以上資料截自：http://edt1023.sayya.org/tex/latex123/node9.html
+
+\vspace{0.5cm}
+\begin{itemize}
+    \item 範例：
+\end{itemize}
+
+\vspace{-0.5cm}
+\begin{lstlisting}
+	\begin{sidewaystable}
+	\centering
+	\begin{tabular}{llllllllp{1in}lp{1in}}
+		.
+		.
+		.
+	\end{tabular}
+	\end{sidewaystable}
+\end{lstlisting}
+
+
+
+\begin{sidewaystable}
+\centering
+\caption[Grooved Ware and Beaker Features, their Finds and
+Radiocarbon Dates]{Grooved Ware and Beaker Features, their
+Finds and Radiocarbon Dates; For a breakdown of the Pottery
+Assemblages see Tables I and III; for
+the Flints see Tables II and IV; for the
+Animal Bones see Table V.}
+\begin{tabular}{llllllllp{1in}lp{1in}}
+\toprule
+Context   &Length   &Breadth/   &Depth   &Profile   &Pottery   &Flint   &Animal   &Stone   &Other    &C14 Dates \\
+  &         &Diameter   &        &          &          &        & 
+Bones&&&\\
+\midrule
+&&&&&&&&&&\\
+\multicolumn{10}{l}{\bf Grooved Ware}&\\
+784       &---        &0.9m       &0.18m   &Sloping U &P1       &$\times$46  &  $\times$8      &&       $\times$2 bone&  2150$\pm$ 100 BC\\
+785       &---        &1.00m      &0.12    &Sloping U &P2--4    &$\times$23  &  $\times$21     & Hammerstone &---&---\\
+962       &---        &1.37m      &0.20m   &Sloping U &P5--6    &$\times$48  &  $\times$57*    & ---&     ---&1990 $\pm$ 80 BC (Layer 4) 1870 $\pm$90 BC (Layer 1)\\
+983       &0.83m      &0.73m      &0.25m   &Stepped U &---      &$\times$18  &  $\times$8      & ---& Fired clay&---\\
+&&&&&&&&&&\\
+\multicolumn{10}{l}{\bf Beaker}&\\
+552       &---        &0.68m      &0.12m   &Saucer    &P7--14   &---           & ---       & ---       &---        &---\\
+790       &---        &0.60m      &0.25m   &U         &P15      &$\times$12    & ---       & Quartzite-lump&---    &---\\
+794       &2.89m      &0.75m      &0.25m   &Irreg.    &P16      &$\times$3     & ---       & ---       &---        &---\\
+\bottomrule
+\end{tabular}
+\end{sidewaystable}
+
+\chapter{未解決問題}
+
+\begin{enumerate}
+	\item 有兩條斜線(畫三等份)的表格。
+	\item 如何把EXCEL檔案的資料直接轉成Latex表格。
+	\item 如何調整頁面，使過寬表格不需經由縮小化或翻轉來強制放入。
+\end{enumerate}
+
+\section{備註}
+	給接下去製作說明書的同學或學弟妹：\\
+
+此份文件由於「可能」出現無解(中文問題)的編譯BUG，故不建議直接從此份文件接續下去修改，最好另外製作一份文件，在編譯無誤後再貼回此份說明書，以避免兩頭空的問題。
+
+
+
+\clearpage
+\end{CJK}
+\end{document}

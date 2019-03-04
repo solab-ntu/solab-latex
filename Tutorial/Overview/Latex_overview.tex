@@ -1,0 +1,743 @@
+\documentclass[12pt,a4paper]{report}
+
+% packages
+\usepackage{CJKutf8}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{indentfirst}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{picinpar,epic}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{multirow} 
+\usepackage{bigdelim}
+%\usepackage[]{mcode}
+
+% % line spacing 
+
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]{\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\halfspacing}{\setlength{\baselineskip}{0.30 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{1.20 \defbaselineskip}}
+\newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
+
+
+%\renewcommand{\arraystretch}{1.5}
+
+% commands
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand\contentsname{目錄}
+\renewcommand\listfigurename{圖目錄}
+\renewcommand\listtablename{表目錄}
+
+
+\begin{document}
+\begin{CJK}{UTF8}{bkai}
+%\titleformat{\chapter}{\Huge}{\textbf{第 \thechapter\ 章}}{1em}{\textbf}
+\thispagestyle{empty}
+\begin{center}
+       ~\\
+        \vspace{5cm}
+
+        \textbf{\Huge
+國立台灣大學機械工程學系 \\
+系統最佳化實驗室
+}
+        \vspace{3cm}
+
+        \textbf{\Huge
+	\LaTeX \\
+	\vspace{2cm}
+	Overview
+        }
+        \vspace{8cm}
+
+        {\large
+            2014 July
+        }
+    \end{center}
+
+\newpage
+
+\tableofcontents
+%\listoffigures
+
+\thispagestyle{empty}
+~
+\newpage
+\clearpage
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{常用文書類別與設定}
+一開始我們先簡單介紹\LaTeX的操作環境及一般文書會用到的功能。
+
+%-----------------------------------------
+\section{基本架構與設定}
+一般LaTeX編輯的架構如下：
+
+	\begin{framed}
+		\begin{verbatim}
+			\documentclass[字體,紙張大小]{文章種類}  %類別設定
+			基本(環境)設定區                        	%巨集套件
+			\begin{document} 
+			文章內容
+			\end{document}
+		\end{verbatim}
+	\end{framed}
+
+\subsection{類別設定}
+\noindent在文書種類設定的部分：\\
+\indent字體：有 10、11、12pt 等，其他大小需要額外安裝 package 才能使用。\\
+\indent紙張大小：有 a4paper、letterpaper 等等。\\
+\indent這個部分還可以加入其他參數進行設定，如文章式單欄還是雙欄、數學式靠左靠右(預設為置中)等等，若要加以設定則參數與參數之間加上逗點即可。\\
+至於文章種類較常使用的有兩種：\\
+\indent article(一般短文)：沒有分章節，頁為連續。\\
+\indent report(論文or報告)：新的一章會自動從新的一頁開始。
+
+\subsection{巨集套件}
+在基本設定區,，我們需要將會使用到的工具組匯入環境中，這些工具組稱為巨集套件，一般格式如下：
+	\begin{framed}
+		\begin{verbatim}
+			\usepackage{套件}
+		\end{verbatim}
+	\end{framed}
+
+下面簡介幾個較常使用的套件：
+
+\begin{enumerate}
+\item 中文編輯(CJKutf8)\\
+若要編輯中文文章皆須使用這個套件。
+\item AMS-LaTeX(amsmath, amsfonts, amssymb)\\
+LaTeX本身就有編輯數學式的能力，這個套件主要在加強數學式編輯能力的巨集套件。
+\item 紙張與邊界設定(geometry)\\
+geometry這個套件需要而外在前面輸入你要設定的參數如下：
+
+	\begin{framed}
+		\begin{verbatim}
+			\usepackage[紙張種類or邊界參數]{geometry}
+		\end{verbatim}
+	\end{framed}
+
+使用 geometry 可以設定紙張種類與邊界等參數，紙張的設定跟前面一樣可以選 a4paper 等等；邊界可以有下面的選擇：\\
+margin=2.5cm：將四邊邊界都設定為2.5公分\\
+left=2.5cm：將左邊界設定為2.5公分\\
+right=2.5cm：將右邊界設定為2.5公分\\
+top=2.5cm：將上邊界設定為2.5公分\\
+bottom=2.5cm：將下邊界設定為2.5公分
+\item 圖片(graphicx)\\
+當文章中需要插入圖片時就需要使用這個套件。
+\item 表格畫線(hhline)\\
+這個巨集可以使插入表格時畫線更方便。
+\item 數學式粗體(bm)\\
+用了這個套件可以增加一個指令\verb|\bm{}|，將數學式置於大括號內就可以粗體顯示。
+\end{enumerate}
+
+\subsection{行距}
+行距可分別針對整篇文件或局部段落做調整；若是要調整整篇文章的話需要在基本設定區加以設定如下：
+	\begin{framed}
+		\begin{verbatim}
+			\linespread{x} %其中的x值為預設行距的倍數
+		\end{verbatim}
+	\end{framed}
+
+\clearpage
+若是要局部調整行距的話需要額外的巨集套件 setspace，整體指令操作如下：
+	\begin{framed}
+		\begin{verbatim}
+			\usepackage{setspace}
+			\begin{document}
+			\begin{spacing}{x}
+
+			%行間距變為原先的x倍
+
+			\end{spacing}
+			\end{document}
+		\end{verbatim}
+	\end{framed}
+
+%-----------------------------------------
+\section{內文設定}
+下面簡介幾項文章中會使用到的功能：
+
+\subsection{字型}
+
+\begin{itemize}
+\item 粗體：利用\verb|\textbf| 或\verb|\bf| 將文字變粗體\\
+如：{\bf 粗體文字}或\textbf{粗體文字}
+	\begin{framed}
+		\begin{verbatim}
+			{\bf 粗體文字}或\textbf{粗體文字}
+		\end{verbatim}
+	\end{framed}
+
+\item 顏色：利用\verb|\textcolor| 更改文字顏色\\
+如：\textcolor{red}{文字}
+	\begin{framed}
+		\begin{verbatim}
+			\textcolor{red}{文字}
+		\end{verbatim}
+	\end{framed}
+
+\item 同時改粗體加顏色可參考下面方式：\\
+如：{\bf \textcolor{red}{粗體加顏色}}或\textcolor{red}{\textbf{粗體加顏色}}
+	\begin{framed}
+		\begin{verbatim}
+			{\bf \textcolor{red}{粗體加顏色}}
+			\textcolor{red}{\textbf{粗體加顏色}}
+		\end{verbatim}
+	\end{framed}
+
+\end{itemize}
+
+\clearpage
+
+\subsection{空白、換行、換頁及符號}
+
+\begin{itemize}
+\item 空白：
+在內文或數學式中若想要在字元間加入空白有下列方式：
+	\begin{framed}
+		\begin{verbatim}
+			\, 小空白
+			\: 中空白
+			\; 大空白
+			\quad 約為M字寬的空白
+			\qquad 約為兩個M字寬的空白
+			\hspace{空白大小}
+		\end{verbatim}
+	\end{framed}
+
+\item 換行：
+在需要手動換行則可使用\verb|\\|強制換行，如：\\
+使用 geometry 可以設定紙張種類與邊界等參數，紙張的設定跟前面一樣可以選 a4paper 等等；邊界可以有下面的選擇：\\margin=2.5cm：將四邊邊界都設定為 2.5 公分\\left=2.5cm：將左邊界設定為 2.5 公分
+	\begin{framed}
+		\begin{verbatim}
+		使用 geometry 可以設定紙張種類與邊界等參數，紙張的設定跟前面一樣可以選 a4paper 等等；邊界可以有下面的選擇：\\margin=2.5cm：將四邊邊界都設定為 2.5 公分\\left=2.5cm：將左邊界設定為 2.5 公分
+		\end{verbatim}
+	\end{framed}
+
+\item 換頁：
+可使用\verb|\clearpage|強制換頁
+
+\item 符號：
+由於 \%、\$、$\backslash$ 這些符號在 \LaTeX 中都是指令的開頭符號，所以內文要使用到這些符號時就需要額外的輸入法來呈現：
+	\begin{framed}
+		\begin{verbatim}
+			%  \%
+			"{","}"  \{,\}
+			&  \&
+			$  \$
+			#  \#
+			\  $\backslash$
+		\end{verbatim}
+	\end{framed}
+\end{itemize}
+
+\subsection{列舉形式}
+文章中除了分章節之外另一個常用的就是列舉，下面介紹三種常用的列舉方式：
+\begin{enumerate}
+\item itemize：
+\begin{itemize}
+\item 123
+	\begin{itemize}
+	\item 456
+	\item 789
+	\end{itemize}
+\item 000
+\end{itemize}
+	\begin{framed}
+		\begin{verbatim}
+			\begin{itemize}
+			\item 123
+				\begin{itemize}
+				\item 456
+				\item 789
+				\end{itemize}
+			\item 000
+			\end{itemize}
+		\end{verbatim}
+	\end{framed}
+\item enumerate：
+\begin{enumerate}
+\item 123
+	\begin{enumerate}
+	\item 456
+	\item 789
+	\end{enumerate}
+\item 000
+\end{enumerate}
+	\begin{framed}
+		\begin{verbatim}
+			\begin{enumerate}
+			\item 123
+				\begin{enumerate}
+				\item 456
+				\item 789
+				\end{enumerate}
+			\item 000
+			\end{enumerate}
+		\end{verbatim}
+	\end{framed}
+\item description：
+\begin{description}
+\item [標題一]敘述一
+\item [標題二]敘述二
+\end{description}
+	\begin{framed}
+		\begin{verbatim}
+			\begin{description}
+			\item [標題一]敘述一
+			\item [標題二]敘述二
+			\end{description}
+		\end{verbatim}
+	\end{framed}
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{圖片}
+前面已經提到有關內文的設定，接著我們針對一般報告中會使用到的基本功能做介紹，首先是插入圖片：
+
+%-----------------------------------------
+\section{環境設定、圖片格式與命名}
+一般來說，若文章中需要插入圖片需要設定及注意的事項：
+\begin{itemize}
+\item 環境設定：除了需要加入\verb|\usepackage{graphicx}|之外，還需要加入另一個設定\verb|\graphicspath{圖片資料夾}|標示此文章中用到的圖片的位置。若沒有另外標示圖片資料夾則所有圖片需與原始 tex 檔放於同一個資料夾內才可使用。
+\item 圖片格式：基本上常用的圖片格式在LaTeX中皆可使用，不過點陣圖(jpg, gif, png等)容易失真，相對之下向量圖(如pdf)就比較不會有失真的問題。
+\item 命名：要使用的圖形名字不能有空格否則會讀取不到。
+\end{itemize}
+
+%-----------------------------------------
+\section{插入圖片}
+
+\subsection{格式}
+一般插入圖片的格式如下：
+	\begin{framed}
+		\begin{verbatim}
+			\begin{figure}[圖片在頁面位置]
+			\centering %置中
+			\includegraphics[尺寸]{圖檔名稱}
+			\caption{圖片敘述} %圖xxx：blahblah
+			\end{figure}
+		\end{verbatim}
+	\end{framed}
+下面直接舉一個例子說明如何插入圖片：
+\clearpage
+由xxx文獻中可以得到下圖：
+    	\begin{figure}[h]
+	\centering
+	\includegraphics[width=5cm]{./pics/minions.jpg}
+	\caption{minions}
+	\label{minions}
+	\end{figure}\\
+由圖\ref{minions}我們可以得到下面結論 blahblahblah...
+
+	\begin{framed}
+		\begin{verbatim}
+			由xxx文獻中可以得到下圖：
+			\begin{figure}[h]
+			\centering
+			\includegraphics[width=5cm]{./pics/minions}
+			\caption{minions}
+			\label{minions}
+			\end{figure}\\
+			由圖\ref{minions}我們可以得到下面結論blahblahblah... 
+		\end{verbatim}
+	\end{framed}
+
+\subsection{圖片參數}
+圖片的插入指令裡面有些參數可以調整：
+\begin{itemize}
+\item 圖片在頁面位置：
+	\begin{itemize}
+	\item h(here)：圖會顯示在原本程式碼中圖與文字的相對位置，如上面的範例圖在兩行文字之間那顯示出來就會一樣。
+	\item t(top)：圖片在頁面上方，不管程式碼的圖文相對位置。
+	\item b(bottom)：圖片在頁面下方。
+	\item p(float)：浮動，\LaTeX 會自動找比較合適的位置。
+	\end{itemize}
+\item 尺寸：
+	\begin{itemize}
+	\item 不放尺寸參數就維持原圖大小。
+	\item \verb|[scale=xx]|：原圖放大或縮小 xx 倍。
+	\item \verb|[width=xx cm]|：將原圖放大至寬度為 xx 公分。
+	\item \verb|[length=xx cm]|：將原圖放大至長度為 xx 公分。
+	\end{itemize}
+\item \verb|\label and \ref|：這兩個指令主要在幫目前的圖編號貼標籤，這兩個指令在打較長的文章時會常常用到，不管圖片還是數學方程式都可以用。首先 \verb|\label{圖片標籤名稱}| 是在對目前的圖片貼上標籤，完成之後在內文裡面只要利用另一個\verb|\ref{圖片標籤名稱}|就可以叫出對應圖片的編號，這在未來打長報告或論文時就可以快速更新內文的圖片或方程式編號。
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{數學式}
+
+在 \LaTeX 的數學模式中，所有的文字、符號預設都為斜體字，如果要在數學模式中插入一般的正常文字，需要使用 \verb|\mbox{}| 或 \verb|\textmr{}| 將文字包圍起來。除了字型會被自動調整之外，所有的空白也都會被忽略。如果需要插入空白，可以使用調整橫向空間的相關指令，如： \verb|\hspace{}| 、 \verb|\quad| 、 \verb|\thinspace| 等指令進行調整。
+
+%-----------------------------------------
+\section{上下標、分數、積分式、運算子}
+在LaTeX 中相較其他文書處理工具的其中一項優勢就是可以迅速打出數學式，下面就以幾種常用的數學式做示範。
+
+\subsection{常用函數}
+若我們想要的只是在內文中表達出簡單的數學式，則只需利用 \verb|$數學式$| 即可。下面的範例也都採用此方法。
+\begin{enumerate}
+
+\item 上下標：
+	\verb|a_{下標內容} or a^{上標內容}|\\
+	遞迴式：$a_{n+1}=3\,a_n+0.5^n+0.2n$
+	\begin{framed}
+		\begin{verbatim}
+			a_{n+1}=3\,a_n+0.5^n+0.2n 
+		\end{verbatim}
+	\end{framed}
+
+\item 分數：
+	\verb|\frac{分子}{分母}|\\
+	等比數列首項為 $a_1$ 公比為 $r$，則前 $n$ 項總和 $S_n=\frac{a_1(r^n-1)}{r-1}$
+	\begin{framed}
+		\begin{verbatim}
+			S_n=\frac{a_1(r^n-1)}{r-1}
+		\end{verbatim}
+	\end{framed}
+	若分數外面需要加次方，除了直接使用上標表示次方數，大括號的部分可使用 \verb|\left與\right| 兩個指令加上括號將分數括起來，如 $P_n=\left(\frac{a_1(r^n-1)}{r-1}\right)^3$，這兩個指令 \verb| (|或\verb|[| 等括弧皆可使用。但是 \verb|{|因為是內建指令需要另外加上與\verb|\| 一起使用。
+	\begin{framed}
+		\begin{verbatim}
+			P_n=\left(\frac{a_1(r^n-1)}{r-1}\right)^3
+		\end{verbatim}
+	\end{framed}
+
+\item 根號：
+	\verb|\sqrt{根號內容}或\sqrt[開次方數]{根號內容}|，使用第一種方式則會顯示開二次方根。\\
+	分別以各一個例子說明：$\sqrt{x^3+x+5}$ and $\sqrt[5]{x+5}$
+	\begin{framed}
+		\begin{verbatim}
+			$\sqrt{x^3+x+5}$ and $\sqrt[5]{x+5}$
+		\end{verbatim}
+	\end{framed}
+
+\item 微分 and 積分：
+	\verb|f'(x) and \int_{a}^{b} {c} \, dx|，其中$a$為積分起點、$b$為積分終點、$c$為積分函數。\\
+	如：$g(x)=f'(x)$ and $h(x)=\int_{a+2}^{b+c} {f(x)} \,dx$
+	\begin{framed}
+		\begin{verbatim}
+			$g(x)=f'(x)$ and $h(x)=\int_{a+2}^{b+c} {f(x)} \,dx$
+		\end{verbatim}
+	\end{framed}
+
+\item 極限：
+	\verb|\lim_{逼近值} {函數}|。\\
+	如：
+	\begin{displaymath}
+	\lim_{n \to \infty} (\frac{1}{2})^n=0
+	\end{displaymath}
+	\begin{framed}
+		\begin{verbatim}
+			$\lim_{n \to \infty} (\frac{1}{2})^n=0$
+		\end{verbatim}
+	\end{framed}
+
+\item 大型運算(數列和)：
+	\verb|\sum\limits_{下界}^{上界} {函數}| 。\\
+	如：$\sum\limits_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+	\begin{framed}
+		\begin{verbatim}
+			$\sum\limits_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+		\end{verbatim}
+	\end{framed}
+\end{enumerate}
+
+\subsection{常用符號}
+除了數學方程式可以快速打出之外，其他文書如 Word 等要一個一個按出來的符號及簡單函數在 \LaTeX 也可以快速打出來，下面舉出幾個簡單的例子，較完整的符號表可以參考 LaTeX-Symbol 這份檔案。
+\begin{enumerate}
+\item 希臘字母：\\
+	如：$\theta = \alpha + \beta + \gamma + \phi + \psi$
+	\begin{framed}
+		\begin{verbatim}
+			$\theta = \alpha + \beta + \gamma + \phi + \psi$
+		\end{verbatim}
+	\end{framed}
+\item 物理常用符號：\\
+	如：剪切模數$G=\frac{\tau}{\gamma}=\frac{E}{2(1+\nu)}$，其中$E=\frac{\sigma}{\epsilon}$為楊氏模數，$\nu$為泊松比
+	\begin{framed}
+		\begin{verbatim}
+			剪切模數$G=\frac{\tau}{\gamma}=\frac{E}{2(1+\nu)}$，
+			其中$E=\frac{\sigma}{\epsilon}$為楊氏模數，$\nu$為泊松比
+		\end{verbatim}
+	\end{framed}
+
+\item 三角函數、對數：三角函數與對數這些函數只需要 $\setminus$ 加上函數名稱即可。\\
+	如：\\
+	$2\sin\alpha\cos\beta=\sin(\alpha+\beta)+\sin(\alpha-\beta)$\\
+	$\cos^2 x +\sin^2 x = 1$\\
+	$\cos 90^\circ = 0$\\
+	$\log_3{81}=4$
+	\begin{framed}
+		\begin{verbatim}
+			$2\sin\alpha\cos\beta=\sin(\alpha+\beta)+\sin(\alpha-\beta)$\\
+			$\cos^2 x +\sin^2 x = 1$\\  %\\=換行
+			$\cos 90^\circ = 0$\\
+			$\log_3{81}=4$
+		\end{verbatim}
+	\end{framed}
+
+\end{enumerate}
+
+%-----------------------------------------
+\section{排版}
+\LaTeX 中的數學模式可分為隨文模式（math in line mode）與展式模式（math display mode）兩種。隨文模式用在文字與數學式混合在一起的排版；展式模式則會將數學式單獨形成一行，且會與正常文字有一定的空間區隔。
+
+\subsection{隨文模式（math in line mode）}
+使用下面的方法可以直接進入隨文數學模式：\\
+\verb|$ 數學式 $|：就這就是前面小節所使用的方法，這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 $F=ma$ 。在這種模式下數學式就會隨著內文一起呈現。
+		\begin{framed}
+			\begin{verbatim}
+			這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 $F=ma$ 。在這種模式下數學式就會隨著內文一起呈現。
+			\end{verbatim}
+		\end{framed}
+
+\subsection{展式模式（math display mode）}
+展式數學式通常用來描述獨立與比較複雜的數學式，它會讓數學式獨立成為一行，且會使用較大的數學符號與字體，有需要的話，也可以加入編號。
+
+以下三種方法可以進入一般的展式模式：
+\begin{enumerate}
+\item \verb|\begin{displaymath} 數學式 \end{displaymath}|\\
+	\\The answer of $ax^2+bx+c$ :
+	\begin{displaymath}
+	x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a} 
+	\end{displaymath}
+	\begin{framed}
+		\begin{verbatim}
+			The answer of $ax^2+bx+c$ :
+			\begin{displaymath}
+				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a} 
+			\end{displaymath}
+		\end{verbatim}
+	\end{framed}
+\item \verb|\[ 數學式 \]| 這是 \verb|\begin{displaymath} 數學式 \end{displaymath}| 的省略寫法。這兩種展式數學式都不會有方程式編號。
+
+\item \verb|\begin{equation} 數學式 \end{equation}|：這是有方程式編號的數學式。如果要取消方程式編號，則可以使用 \verb|equation*| 。
+	\begin{equation}
+		x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}  
+	\end{equation}
+	\begin{framed}
+		\begin{verbatim}
+			\begin{equation}
+				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}  
+			\end{equation}
+		\end{verbatim}
+	\end{framed}
+\end{enumerate}
+
+%-----------------------------------------
+\section{矩陣與多行方程式}
+
+\subsection{矩陣}
+沒有外括號的矩陣可以透過 \verb|\begin{array} 矩陣內容 \end{array}| 來達成，矩陣內部的寫法64都是使用 \& 將各個欄位分開。
+	\begin{equation}
+		\begin{array}{ccc}
+		a & b & c \\
+		d & e& f \\
+		g & h & i
+		\end{array}
+		\label{eq:array}
+	\end{equation}
+	\begin{framed}
+	\begin{verbatim}
+		\begin{equation}
+		\begin{array}{ccc}
+		a & b & c \\  
+		d & e& f \\
+		g & h & i
+		\end{array}
+	\end{equation}
+	\end{verbatim}
+	\end{framed}
+	在(\ref{eq:array})中，如果需要加上左右括號，可以使用 \verb|\left[ \right)| 將 \verb|array| 環境包圍起來，如(\ref{eq:leftright})。值得注意的是，由於大括號為LaTeX內建指令，所以如果要使用大括號，則需要在前面加上一個 \textbackslash；而如果只需要單邊括號，另一邊則以英文句點取代。
+	\begin{equation}
+	\left\{
+	\begin{array}{ccc}
+	a & b & c \\
+	d & e& f \\
+	g & h & i
+	\end{array}
+	\right]
+	\cdot
+	\left(
+	\begin{array}{ccc}
+	a & b & c \\
+	d & e& f \\
+	g & h & i
+	\end{array}
+	\right. 
+	\label{eq:leftright}
+	\end{equation}
+
+	\begin{framed}
+	\begin{verbatim}
+	\begin{equation}
+		\left\{
+		\begin{array}{ccc}
+		a & b & c \\
+		d & e& f \\
+		g & h & i
+		\end{array}
+		\right]
+		\cdot
+		\left(
+		\begin{array}{ccc}
+		a & b & c \\
+		d & e& f \\
+		g & h & i
+		\end{array}
+		\right. 
+	\end{equation}
+	\end{verbatim}
+	\end{framed}
+使用上述方法，可以簡單的寫出分段方程式：
+\begin{equation}
+f(x) = 
+\left\{
+	\begin{array}{ccc}
+	ax+b & , & x\ge 0 \\
+	cx+d & , & x< 0 
+	\end{array}
+\right.
+\end{equation}
+
+\begin{framed}
+\begin{verbatim}
+\[
+f(x) = 
+\left\{
+	\begin{array}{ccc}
+	ax+b & , & x\ge 0 \\
+	cx+d & , & x< 0 
+	\end{array}
+\right.
+\]
+\end{verbatim}
+\end{framed}
+
+
+\subsection{多行方程式}
+ \verb|align| 環境可以用來輸入多行方程式，在 \verb|align| 環境中，可以使用 \verb|&| 將特定位置對齊。
+\begin{align}
+f(x) =\quad & x^2-(a+b)x+ab\\
+=\quad & x^2-ax-bx+ab\\
+=\quad &  (x-a)(x-b)
+\end{align}
+
+\begin{framed}
+\begin{verbatim}
+\begin{align}
+f(x) =\quad & x^2-(a+b)x+ab\\
+=\quad & x^2-ax-bx+ab\\
+=\quad &  (x-a)(x-b)
+\end{align}
+\end{verbatim}
+\end{framed}
+
+若我們並不需要方程式的子標號，這時候只要在 \verb|align| 環境中再使用 \verb|split| 環境包起來即可。
+\begin{align}
+\begin{split}
+f(x) =\quad & x^2-(a+b)x+ab\\
+	=\quad & x^2-ax-bx+ab\\
+	=\quad &  (x-a)(x-b)
+\end{split}
+\end{align}
+
+\begin{framed}
+\begin{verbatim}
+\begin{align}
+\begin{split}
+f(x) =\quad & x^2-(a+b)x+ab\\
+=\quad & x^2-ax-bx+ab\\
+=\quad &  (x-a)(x-b)
+\end{split}
+\end{align}
+\end{verbatim}
+\end{framed}
+
+\section{Exercise}
+\begin{enumerate}
+	\item 試打出下列數學式\\
+	\begin{equation}
+	 f(x,\mu,\sigma) = \frac{1}{\sigma \sqrt{2\pi}}(\frac{x-\mu}{\sigma})^2
+	\end{equation}
+	
+	\item 試打出一般最佳化方程式\\
+	\begin{align}
+	\begin{split}
+	\min_x \quad & f(x) \\
+	\mbox{s.t.} \quad & g(x) \le 0\\
+	& h(x) = 0 
+	\end{split}
+	\end{align}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{表格}
+
+一般使用狀況下的表格編輯方式如下：
+\begin{table}[h]
+	\caption{table 1}
+	\label{t_1}
+	\centering
+	\begin{tabular}{c||l|c}
+	\hline
+	\hline
+	\makebox[6cm][r]{Compare item} & \makebox[4cm]{Cost} & {Price}\\ \hline
+	Item 1 & 200 & 200 \\ \hline
+	Item 2 & 300 & 200 \\ \hline
+	Item 3 & 400 & 200 \\ \hline
+	\end{tabular}
+\end{table}
+
+若要在內文引用表格，如表\ref{t_1}，使用方式還是跟前面提到的一樣。
+\begin{framed}
+\begin{verbatim}
+	\begin{table}[!h]
+		\caption{table 1}
+		\label{t_1}
+		\centering
+		\begin{tabular}{c||l|c}
+		\hline
+		\hline
+		\makebox[6cm][r]{Compare item} & \makebox[4cm]{Cost} & {Price}\\ \hline
+		Item 1 & 200 & 200 \\ \hline
+		Item 2 & 300 & 200 \\ \hline
+		Item 3 & 400 & 200 \\ \hline
+		\end{tabular}
+	\end{table}
+	若要在內文引用表格，如表\ref{t_1}，使用方式還是跟前面提到的一樣。
+\end{verbatim}
+\end{framed}
+
+表格的格式與程式碼有下列注意事項：
+\begin{itemize}
+\item 第一行最後面的 \verb|[!h]| 與圖片使用方式相同。
+\item \textcolor{red}{表格的 caption 需要放在表格之前。}
+\item \textbf{縱線、項目對齊方式}：表格的縱線在表格插入時(第五行)就設定好了：需要幾個比較項目、表格中每個項目的對齊方式、項目之間需要幾條縱線也都是在這裡設定。
+\item \textbf{橫線}：表格的橫線則是使用 \verb|\hline| 指令插入，用幾次指令就可以得到幾條橫線。
+\item 項目細節：LaTeX預設的項目格子大小就是文字長度，對齊方式則是居中；若要更改這些設定需要用到 \verb|\makebox| 指令加以修改，其格式為：
+\begin{framed}
+\begin{verbatim}
+\makebox[表格大小][對齊方式]{比較項目}
+\end{verbatim}
+\end{framed}
+
+\end{itemize}
+
+
+
+\clearpage
+\end{CJK}
+\end{document}
