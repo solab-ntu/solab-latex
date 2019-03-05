@@ -1,6 +1,6 @@
 # solab-latex
 
-SOLab latex tutorial, template and style document collection
+SOLab Latex 教材、範本與風格 (tutorial, template, style) 文件。
 
 ## Tutorial
 
