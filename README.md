@@ -4,8 +4,8 @@ SOLab latex tutorial, template and style document collection
 
 ## Tutorial
 
-- [Install](./Tutorial/Install.md)
-- [Command](./Tutorial/Command.md)
+- [Introduction](./Tutorial/Introduction.md)
+- [Compile](./Tutorial/Compile.md)
 - [Overview](./Tutorial/Overview/Latex_overview.pdf)
 - [Basic and Text Adjustment](./Tutorial/Basic/Latex_basic_and_text_adjustment.pdf)
 - [Equation and Debug](./Tutorial/Equation/Latex_equation.pdf)
