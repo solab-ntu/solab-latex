@@ -32,13 +32,14 @@ sudo apt install texlive-full
 
 ### Vim + Terminal
 
-下圖 vim 使用 onedark colorscheme，使用 okular 瀏覽 pdf，手動輸入命令進行編譯。
+下圖使用 vim 編輯，手動輸入命令進行編譯，使用 okular 瀏覽 pdf。
 
 ![Intro-vscode](./pics/Intro-vim.png)
 
 ## Online Editor & Compiler
 
+參考 https://www.overleaf.com/
+
 線上多人協同編輯與編譯器，缺點是編譯速度較慢、不確定是否支援 bibtex。
 
-參考 https://www.overleaf.com/
 
