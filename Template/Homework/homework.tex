@@ -9,37 +9,39 @@
 \usepackage{enumerate} % \begin{enumerate}
 \usepackage{bm} % \bm
 %\usepackage{amsmath, amsfonts, amssymb, mathtools} % provides miscellaneous enhancements of mathematical formulas
-%\usepackage{listings} % code showing
-
-% -- renewcommand
-%\renewcommand{\figurename}{圖}
-%\renewcommand{\tablename}{表}
+\usepackage{listings} % code showing
+\usepackage{pagecolor} % for code color define
 
 % -- code style
-%\definecolor{codegreen}{rgb}{0,0.6,0}
-%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-%\definecolor{codepurple}{rgb}{0.58,0,0.82}
-%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-%\lstdefinestyle{pystyle}{
-    %backgroundcolor=\color{backcolour},   
-    %commentstyle=\color{codegreen},
-    %keywordstyle=\color{magenta},
-    %numberstyle=\tiny\color{codegray},
-    %stringstyle=\color{codepurple},
-    %basicstyle=\ttfamily\scriptsize,
-    %breakatwhitespace=false,         
-    %breaklines=true,                 
-    %captionpos=b,                    
-    %keepspaces=true,                 
-    %numbers=left,                    
-    %numbersep=5pt,                  
-    %showspaces=false,                
-    %showstringspaces=false,
-    %showtabs=false,                  
-    %tabsize=2,
-    %extendedchars=false
-%}
-%\lstset{style=pystyle}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{pystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\footnotesize\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    extendedchars=false
+}
+\lstset{style=pystyle}
+
+% -- renewcommand
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand{\lstlistingname}{Code}
 
 % -------------------------------------------------------------------------- %
 
@@ -64,6 +66,7 @@
 \section{Problem 2}
 \subsection*{solution}
 
-\newpage
+\lstinputlisting[language=Python, firstline=5, lastline=7, firstnumber=5]{./code.py}
+\lstinputlisting[language=Python, caption=demo, label=code:dwmo]{./code.py}
 
 \end{document}
