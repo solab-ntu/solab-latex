@@ -1,0 +1,105 @@
+\documentclass[a4paper,10pt]{article}
+
+% packages
+\usepackage{amsmath, amsfonts, bm, cite}
+\usepackage[pdftex]{graphicx}
+\usepackage{color, subfigure}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makeidx, chngpage}
+
+% line spacing
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]{\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\halfspacing}{\setlength{\baselineskip}{0.30 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{1.20 \defbaselineskip}}
+\newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
+
+\renewcommand{\arraystretch}{1.5}
+
+% commandsa
+\newcommand{\muX}{\bm{\mu}_{\mathbf{X}}}
+\newcommand{\bitem}{\begin{itemize}} 
+\newcommand{\eitem}{\end{itemize}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ea}{\end{eqnarray}}
+\newcommand{\nn}{\notag}
+\renewcommand{\vec}{\mathbf} % vector is bold, non-italic 
+
+%\renewcommand{\baselinestretch}{2} % double spacing
+
+\begin{document}
+
+\begin{center}~\\~\\
+
+{\Large {\sc SOLab Paper Template}}\\~\\
+
+\singlespacing
+Michael Jordan\footnote[1]{Graduate Student}, Kuei-Yuan Chan\footnote[2]{Corresponding Author, Associate Professor, Fax:+886-2-2363-1755}, \\
+ {\tt chanky@ntu.edu.tw}\\
+Department of Mechanical Engineering, \\
+National Taiwan University, Taipei, Taiwan\\~\\
+
+%Submitted for Publication in the {\em Journal of Mechanical Design}%\\ Special Issue on Design Under Uncertainty
+
+\doublespacing
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Here is where the abstract should be. In general, abstract has only one paragraph with no equations and figures. 
+\end{abstract}
+~\\~\\
+\textbf{Keywords} : put some keywords that you think are relevant to your work, keyword 1, keyword 2\newpage
+\noindent \textbf{Nomenclature}
+\begin{description}
+\item[$a_0$] the average rate of change of the objective function.
+\item[$a_j$] the average rate of change of the $j$th constraint function.
+\item[$c_j$] the weight coefficient of the $j$th inequality constraint.
+\item[$d$] the size of the subspace, the distance between center and vertex, a half of diagonal.
+\item[$d_{\mathrm{c},i}^{k}$] the size of the $k$th subspace from $i$th  parent space.
+\item[$f_*$ or $f_{\mathrm{min}}$] current best function value.
+\item[$f_{\mathrm{c},i}^{k}$] sampling the $k$th result by SQP from $i$th parent space in S.A. DIRECT.
+\item[$g_j^r$] the violation value of the $r$th sub space violate the $j$th constraint.
+\item[$i$] the dummy number of design variables($i=1,\cdots n$).
+\item[$j$] the dummy number of the constraint($j=1,\cdots m$).
+\item[$K$] tuning parameter.
+\item[$l_i$] the $i$th design variables lower bound.
+\item[$lb_i$] the $i$th lower boundary.
+\item[$m$] the number of all constraint.
+\item[$n$] the dimension(or number) of the design variables.
+\item[$\mathcal{S}_{\mathrm{p}, i}$] the $i$th parent space, selected from all subspace in S.A. DIRECT.
+\item[$\mathcal{S}_{\mathrm{c}, i}^k$] the $k$th subspace(or child space), produced from the $i$th parent space in S.A. DIRECT.
+\item[$s_0$] the sum of observed rates of change of the objective function.
+\item[$s_j$] the sum of observed rates of change of the $j$th constraint function.
+\item[$u_i$]   the $i$th upper bound.
+\item[$ub_i$]   the distance between sample and the $i$th upper bound.
+\item[$x_r$] sampling point by DIRECT algorithm. 
+\item[$\vec{x}_{\mathrm{c},i}^{k}$] the $k$th sampling point by SQP from $i$th parent space in S.A. DIRECT.
+\item[$\theta$] the relation of global and local with respect to current optimum.
+\item[$\varepsilon$] balance parameter, adjusting the process of selecting, avoiding to selecting the subspace too small.
+\item[$\epsilon$] $\varepsilon \times f_{min}$,  the concept likes $\varepsilon$.
+\end{description}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+\section{Literature Review}
+
+\section{Methodology}
+
+
+\section{Engineering case study : design of a belt-pulley mechanism}
+
+\bibliography{}
+\bibliographystyle{unsrt}
+\end{document}
+
+
+

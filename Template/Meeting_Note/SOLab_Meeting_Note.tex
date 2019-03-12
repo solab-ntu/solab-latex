@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper]{article}
+
+% packages
+\usepackage{CJKutf8}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{picinpar,epic}
+\usepackage{subfig}
+\usepackage[margin=2cm]{geometry}
+ \usepackage{enumerate}
+ 
+% line spacing 
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]{\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\halfspacing}{\setlength{\baselineskip}{0.30 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{1.20 \defbaselineskip}}
+\newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
+
+\renewcommand{\arraystretch}{1.5}
+
+% commands
+\newcommand{\bitem} {\begin{itemize}}
+\newcommand{\eitem} {\end{itemize}}
+%\renewcommand{\vec}{\mathbf} % vector is bold, non-italic 
+
+
+\begin{document}
+\begin{CJK}{UTF8}{bkai}
+\begin{center}
+% 姓名
+{\Large {\sc SOLab Individual Meeting : Tzu-Chieh Hung 06/10/2013}}\\~\\
+\end{center}
+
+% 請條列式列出討論事項
+\bitem
+\item 上次討論事項
+	\bitem
+	\item 
+	\eitem
+
+\item 本次研究進度
+	\bitem
+	\item 
+	\eitem
+\item 未完成事項
+	\bitem
+	\item 
+	\eitem
+
+
+\item 其餘討論事項
+	\bitem
+	\item 
+	\eitem
+
+\eitem
+
+\end{CJK}
+\end{document}

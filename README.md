@@ -1,6 +1,6 @@
 # solab-latex
 
-SOLab Latex 教材、範本與風格 (tutorial, template, style) 文件。
+SOLab Latex 教材、範本與風格文件。
 
 ## Tutorial
 
@@ -15,15 +15,15 @@ SOLab Latex 教材、範本與風格 (tutorial, template, style) 文件。
 
 ## Template
 
-- ASME
-    - Conference
-    - Journal
-- Comment
-- [Homework](./Template/Homework/homework.pdf)
-- Note
+- [Comment](./Template/Comment/SOLab_Comment.pdf)
+- [Homework](./Template/Homework/SOLab_Homework.pdf)
+- [Meeting Note](./Template/Meeting_Note/SOLab_Meeting_Note.pdf)
 - Paper
+    - [SOLab](./Template/Paper/SOLab/SOLab_Paper.pdf)
+    - [ASME Conference](./Template/Paper/ASME_Conference/asme2e.pdf)
+    - ASME Journal
 - Project
-- Review
+- [Review](./Template/Review/SOLab_Review.pdf)
 - Thesis
     - Chinese
     - English

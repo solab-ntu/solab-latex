@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+
+% packages
+\usepackage{CJKutf8}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{graphicx}
+
+ 
+% line spacing
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]{\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\halfspacing}{\setlength{\baselineskip}{0.30 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{1.20 \defbaselineskip}}
+\newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
+\renewcommand{\arraystretch}{1.5}
+
+% commands
+\newcommand{\bitem} {\begin{itemize}}
+\newcommand{\eitem} {\end{itemize}}
+\newcommand{\be} {\begin{equation}}
+\newcommand{\ee} {\end{equation}}
+\newcommand{\ba} {\begin{eqnarray}}
+\newcommand{\ea} {\end{eqnarray}}
+\newcommand{\nn} {\notag}
+\renewcommand{\vec}{\mathbf} % vector is bold, non-italic 
+
+\begin{document}
+\begin{CJK}{UTF8}{bkai}
+\begin{center}~\\~\\
+% 姓名
+{\Large {\sc SOLab Review Sheet : Optimization of an unoptimizable object}}\\~\\
+
+\end{center}
+\noindent \textbf{Paper title} : 對無法最佳化物體的最佳化策略\\
+
+\noindent \textbf{Summary} : In this work the author developed a ABC-SSO algorithm to solve large-scale S-system modeled-based genetic network inference problem. The paper is well written and well organized.  \\
+
+\noindent \textbf{Comments} : 
+\begin{enumerate}
+\item A large number of acronyms are used throughout the manuscript. Many of them are only used once. The author should list all the important acronyms in the beginning and make sure all acronyms are spelled-out before using them. For example, the ABC, SSO in the abstract are not defined until later in the text. 
+
+\item What is `$N$'? Is it the number of genes in a network components or the number of network components? Please be more specific on page 2.
+
+\item The proposed method decompose the original problem into $N$ number of subproblems each with $2(N+1)$ parameters. SSO is used to solve the subproblems and then ABS is used to solve the overall system. The mathematical formulation the ABC algorithm tries to solve is unclear. Is the objective function simply the sum of each $f_i$? Please make sure the mathematical problems of both the subproblems and the combined problem be clearly defined. In the current manuscript, only objective functions are listed.
+
+\item ABC solve iteratively based on the subproblem solutions from SSO. However this iteration is not shown in Figure 1. How to coordinate each subproblems when some of the parameters are in contradiction? How to make sure linkings (coupling) between subsystems are consistent in the final solution? What are the convergence criteria in Figure 1. Please be more clear to all the algorithmic details in the manuscript.
+
+\item The iTEA approach from the literature uses similar decomposition approach except the algorithms used for subproblems and combined problems are different. In the introduction the author tries to provide the impression that large-scale SGNI problems have not been solved. This claim does not seem to be true since iTEA by Ho and the SPXGA approach have all been proposed. Therefore the authors should provide a better motivation for the proposed work.
+
+\item Comparisons between the ABC-SSO and iTEA in Table 7 is very minimal. Using the table as the only evidence that the proposed method is significantly better than iTEA is risky.
+
+\end{enumerate}
+\end{CJK}
+
+\end{document}
