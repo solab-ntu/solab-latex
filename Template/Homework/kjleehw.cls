@@ -9,7 +9,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{kjleehw}[2013/02/14 Kuo-Jung Lee's Homework Class]
 
-\LoadClass[a4paper, fleqn, 12pt]{report}
+\LoadClass[a4paper, fleqn, 12pt]{article}
 %\RequirePackage{jhwmath} Personal style file I use.
 
 \RequirePackage{fancyhdr}
@@ -58,12 +58,16 @@ pdfproducer = {dvips + ps2pdf}
 
 
 \newcommand*{\anyproblem}[1]{\subsection*{#1}}
+
 \newcommand*{\problem}[1]{\stepcounter{ProblemNum} %
-\anyproblem{Problem \theProblemNum. \; #1}}
+\anyproblem{#1}}
+
 \newcommand*{\soln}[1]{\subsubsection*{#1}}
 \newcommand*{\solution}{\soln{Solution}}
-\renewcommand*{\part}{\stepcounter{SubProblemNum} %
-\soln{Part (\theSubProblemNum)}}
+
+\renewcommand*{\part}[1]{\stepcounter{SubProblemNum} %
+\soln{Part(\theSubProblemNum) {#1}} }
+% \newcommand*{\section}[1]{\section*{#1}}
 
 %\renewcommand{\theenumi}{(\alph{enumi})}
 %\renewcommand{\labelenumi}{\theenumi.}

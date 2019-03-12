@@ -1,15 +1,69 @@
-\documentclass[]{kjleehw}
+\documentclass[12pt]{kjleehw}
 
-\usepackage{subfigure}
+% -- general
+\setcounter{secnumdepth}{0} % 不要在 \section 的標題加入流水號
+
+% -- package
 \usepackage{CJKutf8}
+\usepackage{subfigure} % \subfigure
+\usepackage{enumerate} % \begin{enumerate}
+\usepackage{bm} % \bm
+%\usepackage{amsmath, amsfonts, amssymb, mathtools} % provides miscellaneous enhancements of mathematical formulas
+%\usepackage{listings} % code showing
+
+% -- renewcommand
 %\renewcommand{\figurename}{圖}
 %\renewcommand{\tablename}{表}
 
-\title{\textbf{Homework 1}}
-\lhead{Course}
-\rhead{Name1\\Name2}
+% -- code style
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%\lstdefinestyle{pystyle}{
+    %backgroundcolor=\color{backcolour},   
+    %commentstyle=\color{codegreen},
+    %keywordstyle=\color{magenta},
+    %numberstyle=\tiny\color{codegray},
+    %stringstyle=\color{codepurple},
+    %basicstyle=\ttfamily\scriptsize,
+    %breakatwhitespace=false,         
+    %breaklines=true,                 
+    %captionpos=b,                    
+    %keepspaces=true,                 
+    %numbers=left,                    
+    %numbersep=5pt,                  
+    %showspaces=false,                
+    %showstringspaces=false,
+    %showtabs=false,                  
+    %tabsize=2,
+    %extendedchars=false
+%}
+%\lstset{style=pystyle}
+
+% -------------------------------------------------------------------------- %
 
 \begin{document}
-\problem
-\solution
+
+\title{\textbf{Homework 1}}
+\lhead{Course}
+\rhead{Name1\\ Name2}
+
+%\tableofcontents % 加入目錄
+
+\section{Problem 1}
+\subsection*{solution} % * (star) 代表不要出現在目錄
+
+\begin{align*}
+& P_A = (x_A,y_A,z_A)\\
+& P_B = (x_B,y_B,z_B)
+\end{align*}
+
+\newpage
+
+\section{Problem 2}
+\subsection*{solution}
+
+\newpage
+
 \end{document}
