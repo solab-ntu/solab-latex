@@ -1,0 +1,98 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 12pt, oneside]{book}
+
+\input{PackageSetting}
+\input{XeCJKsetting}
+\begin{document}
+
+%----------- hyphenation  -----------
+%\righthyphenmin=10  % Best hyphenation parameter
+
+%----------- watermark -----------
+%\CenterWallPaper{0.174}{watermark.pdf}
+%\setlength{\wpXoffset}{6.1725cm}
+%\setlength{\wpYoffset}{10.5225cm}
+
+%----------- cover page -----------
+\maketitle
+
+%----------- side page, used for printing on spline -----------
+\makeside
+
+
+\frontmatter
+%----------- generate the certification page by LaTeX -----------
+\makecertification
+%----------- includepdf by using package pdfpages -----------
+%\addcontentsline{toc}{chapter}{口試委員會審定書}
+%\includepdf[pages={1}]{cert.pdf}
+
+\onehalfspacing
+\input{acknowledgementsCH}
+\input{abstractCH}
+\doublespacing
+\input{abstractEN}
+
+%\doublespacing
+\onehalfspacing
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+%\doublespacing
+
+%----------- Include/Input your thesis here -----------
+%normal cite == \input
+\chapter{}
+%\input{start}
+%\input{THM}
+%\input{EXP}
+%\input{main}
+%\input{conclusions}
+
+%chapter cite  == \include
+%\include{start}
+%\include{introduction}
+%\include{THM}
+%\include{EXP}
+%\include{main}
+%\include{conclusions}
+
+
+%----------- Input your appendix here  -----------
+\appendix
+\titlecontents{chapter}[0em]{\fontsize{12}{18}\selectfont}
+  {\hspace{3.5em}\contentslabel[附錄\,\thecontentslabel]{3.5em}}
+  {}{\hspace{0.5em}\titlerule*{.}\contentspage}
+
+\titleformat{\chapter}[display]
+	{\bf\Large}
+	{\filleft 附錄\,\thechapter}
+	{1ex}
+	{\huge\titlerule
+	 \vspace{2ex}%
+	 \filright}
+	[\vspace{2ex}%
+	 \titlerule]
+
+\input{AppendixA} 
+
+
+
+\backmatter
+
+
+%---------- Input your reference here ---------
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{reference}
+
+%----------- Input your Figure chapter here  -----------
+%\input{EndFigTab} 
+%chapter cite  == \include
+%\include{EndFigTab}
+
+\end{document}

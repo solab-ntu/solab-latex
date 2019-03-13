@@ -25,8 +25,8 @@ SOLab Latex 教材、範本與風格文件。
 - Project
 - [Review](./Template/Review/SOLab_Review.pdf)
 - Thesis
-    - Chinese
-    - English
+    - [Chinese](./Template/Thesis/Chinese/thesis.pdf)
+    - [English](./Template/Thesis/English/README.md)
 
 ## Style
 

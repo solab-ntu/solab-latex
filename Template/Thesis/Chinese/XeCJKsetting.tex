@@ -1,0 +1,54 @@
+\usepackage{CJKnumb}
+\usepackage{titletoc}					% 目錄修改套件
+\usepackage{titlesec} 				% 美化章節標題套件
+
+% === 圖表相關設定 ===
+
+\graphicspath{{images/}} 			% 設定圖形路徑
+
+\newcommand{\loflabel}{圖}
+\newcommand{\lotlabel}{表}
+\renewcommand\figurename{\loflabel}
+\renewcommand\tablename{\lotlabel}
+\setlength{\abovecaptionskip}{10pt} % 修改圖表標題和圖表內容的間距
+\setlength{\belowcaptionskip}{10pt} % 修改圖表標題和圖表內容的間距
+
+% === 自訂指令 ===
+\renewcommand\contentsname{目錄}
+\renewcommand\listfigurename{圖目錄}
+\renewcommand\listtablename{表目錄}
+\renewcommand\bibname{參考文獻}
+
+\setlength{\parindent}{22pt}  	% 設定縮排
+
+\newboolean{isAppendix}
+\setboolean{isAppendix}{false}
+
+
+% === 目錄標題 (配合 titletoc) ===
+\titlecontents{chapter}[0em]{\fontsize{12}{18}\selectfont}
+  {\hspace{3.5em}\contentslabel[第\CJKnumber{\thecontentslabel}章]{3.5em}}
+  {}{\hspace{0.5em}\titlerule*{.}\contentspage}
+
+\titlecontents{section}
+[3.5em]
+{\fontsize{12}{18}\selectfont}
+{\contentslabel{2em}}
+{}{\hspace{0.5em}\titlerule*{.} \contentspage}
+
+\titlecontents{subsection}
+[6.5em]
+{\fontsize{12}{18}\selectfont}
+{\contentslabel{3em}}
+{}{\hspace{0.5em}\titlerule*{.} \contentspage}
+
+% === 章節標題 (配合 titlesec) ===
+\titleformat{\chapter}[display]
+	{\bf\Large}
+	{\filleft 第\,\CJKnumber{\thechapter}\,章}
+	{1ex}
+	{\huge\titlerule
+	 \vspace{2ex}%
+	 \filright}
+	[\vspace{2ex}%
+	 \titlerule]

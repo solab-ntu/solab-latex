@@ -1,0 +1,235 @@
+% author: Tz-Huan Huang [http://www.csie.ntu.edu.tw/~tzhuan]
+
+% ----------------------------------------------------------------------------
+% "THE CHOCOLATE-WARE LICENSE":
+% Tz-Huan Huang wrote this file. As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a chocolate in return Tz-Huan Huang
+% ----------------------------------------------------------------------------
+
+%Revised by Tzu-Han Chang
+
+\RequirePackage{array}
+\RequirePackage{graphicx}
+\RequirePackage[top=3cm,left=3cm,bottom=2cm,right=3cm]{geometry}
+
+\RequirePackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\RequirePackage[AutoFakeBold,AutoFakeSlant]{xeCJK}
+\RequirePackage{CJKfntef}
+\setmainfont{Times New Roman} % Default main font
+\setromanfont{Times New Roman} % Default roman font
+\setCJKmainfont{標楷體} % Default CJK
+%\setCJKmainfont{cwTeXQKai-Medium.ttf} % Default CJK
+\setCJKfamilyfont{kaiv}[Vertical=RotatedGlyphs]{標楷體}
+%\setCJKfamilyfont{kaiv}[Vertical=RotatedGlyphs]{cwTeXQKai-Medium}
+%\setmonofont{Courier New} % 等寬字型
+%%\setmonofont{Menlo} % 等寬字型
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt 
+
+\newcommand\universityCH[1]{\newcommand{\theuniversityCH}{#1}}
+\newcommand\collageCH[1]{\newcommand{\thecollageCH}{#1}}
+\newcommand\instituteCH[1]{\newcommand{\theinstituteCH}{#1}}
+\newcommand\degreeCH[1]{\newcommand{\thedegreeCH}{#1}}
+\newcommand\degreeEN[1]{\newcommand{\thedegreeEN}{#1}}
+\newcommand\thesisCH[1]{\newcommand{\thethesisCH}{#1}}
+\newcommand\instituteEN[1]{\newcommand{\theinstituteEN}{#1}}
+\newcommand\collageEN[1]{\newcommand{\thecollageEN}{#1}}
+\newcommand\universityEN[1]{\newcommand{\theuniversityEN}{#1}}
+\newcommand\thesisEN[1]{\newcommand{\thethesisEN}{#1}}
+\newcommand\titleCH[1]{\newcommand{\thetitleCH}{#1}}
+\newcommand\titleEN[1]{\newcommand{\thetitleEN}{#1}}
+\newcommand\authorCH[1]{\newcommand{\theauthorCH}{#1}}
+\newcommand\authorEN[1]{\newcommand{\theauthorEN}{#1}}
+\newcommand\advisorCH[1]{\newcommand{\theadvisorCH}{#1}}
+\newcommand\advisorEN[1]{\newcommand{\theadvisorEN}{#1}}
+\newcommand\advisortitleCH[1]{\newcommand{\theadvisortitleCH}{#1}}
+\newcommand\advisortitleEN[1]{\newcommand{\theadvisortitleEN}{#1}}
+\newcommand\yearCH[1]{\newcommand{\theyearCH}{#1}}
+\newcommand\yearEN[1]{\newcommand{\theyearEN}{#1}}
+\newcommand\monthCH[1]{\newcommand{\themonthCH}{#1}}
+\newcommand\monthEN[1]{\newcommand{\themonthEN}{#1}}
+\newcommand\dateCH[1]{\newcommand{\thedateCH}{#1}}
+\newcommand\datetitleCH[1]{\newcommand{\thedatetitleCH}{#1}}
+\newcommand\yeartitleCH[1]{\newcommand{\theyeartitleCH}{#1}}
+\newcommand\monthtitleCH[1]{\newcommand{\themonthtitleCH}{#1}}
+\newcommand\writtenCH[1]{\newcommand{\thewrittenCH}{#1}}
+\newcommand\abstractnameEN[1]{\newcommand{\theabstractnameEN}{#1}}
+\newcommand\abstractnameCH[1]{\newcommand{\theabstractnameCH}{#1}}
+\newcommand\studentID[1]{\newcommand{\thestudentID}{#1}}
+\newcommand\acknowledgementsnameEN[1]{\newcommand{\theacknowledgementsnameEN}{#1}}
+\newcommand\acknowledgementsnameCH[1]{\newcommand{\theacknowledgementsnameCH}{#1}}
+
+% Command to generate the title page.
+\renewcommand{\maketitle}{ {
+
+\newgeometry{top=4cm,bottom=3cm}
+\begin{titlepage}
+\begin{center}
+\fontsize{18}{27}\selectfont
+\theuniversityCH\thecollageCH\theinstituteCH\\
+\thethesisCH
+
+\fontsize{14}{21}\selectfont
+\theinstituteEN\\
+\thecollageEN\\
+\fontsize{16}{24}\selectfont
+\theuniversityEN\\
+\thethesisEN
+
+\vspace{2cm}
+\parbox[c][150pt][c]{\textwidth}{
+\centering
+\fontsize{18}{27}\selectfont
+\thetitleCH\\
+\thetitleEN
+}
+
+\vspace{2.5cm}
+\fontsize{18}{27}\selectfont
+\theauthorCH\\
+\theauthorEN
+
+\vspace{1.5cm}
+\fontsize{18}{27}\selectfont
+\theadvisortitleCH\theadvisorCH\\
+\theadvisortitleEN{} \theadvisorEN
+
+\vspace{1.5cm}
+\fontsize{18}{27}\selectfont
+\thedatetitleCH{}
+	\raisebox{1pt}{\theyearCH} \theyeartitleCH{}
+	\raisebox{1pt}{\themonthCH} \themonthtitleCH\\
+\themonthEN, \theyearEN
+\end{center}
+\end{titlepage}
+\restoregeometry
+} }
+
+\def\CJKmovesymbol#1{\raise.35em\hbox{#1}}
+\def\CJKmove{\let\CJKsymbol\CJKmovesymbol
+\let\CJKpunctsymbol\CJKsymbol}
+
+\newenvironment{kaivmove}
+{\CJKfamily{kaiv}\CJKmove{}}
+{\CJKmove\CJKfamily{kaiv}{}}
+
+
+\newcommand{\makeside}{ {
+\thispagestyle{empty}
+\fontsize{12}{12}\selectfont
+\noindent\rotatebox{-90}{
+\begin{tabular}{%
+	m{3.5cm}m{0.1cm}m{2cm}m{0.1cm}m{10cm}m{1cm}m{3cm}m{0.1cm}m{1.5cm}}
+\fontsize{12}{12}\selectfont\begin{CJKfilltwosides}{3cm}\CJKfamily{kaiv}\CJKmove{\theuniversityCH}\\
+	\CJKfamily{kaiv}\CJKmove{\theinstituteCH}\end{CJKfilltwosides} & &
+\CJKfamily{kaiv}\CJKmove{\thethesisCH} & &
+{\fontsize{14}{14}\selectfont\CJKfamily{kaiv}\CJKmove{\thetitleCH}} & &
+{\fontsize{14}{14}\CJKfamily{kaiv}\CJKmove{\theauthorCH{\quad} \thewrittenCH}} & &
+\rotatebox{90}{\hspace{-0.25em}\theyearCH} \rotatebox{90}{\hspace{0.25em}\themonthCH}
+\end{tabular}
+}    
+
+
+\newpage
+
+} }
+
+% Command to generate the certification page
+\newcommand{\makecertification}{ {
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{口試委員會審定書}
+\begin{center}
+\fontsize{24}{36}\selectfont
+\theuniversityCH\thedegreeCH 學位論文\\
+口試委員會審定書
+
+\vspace{0.5cm}
+
+\fontsize{20}{30}\selectfont
+\thetitleCH\\
+\thetitleEN
+\end{center}
+
+\vspace{1cm}
+
+\fontsize{16}{24}\selectfont
+\noindent \hspace{29pt}本論文係\theauthorCH 君\raisebox{1pt}{ (\thestudentID)} 
+在\theuniversityCH\theinstituteCH 完成之\thedegreeCH 學位論文，於民國 
+\raisebox{1pt}{\theyearCH} 年 
+\raisebox{1pt}{\themonthCH} 月 
+\raisebox{1pt}{\thedateCH} 日承下列考試委員審查通過及口試及格，特此證明
+\fontsize{14}{18}\selectfont
+\vspace{1.5cm}\\
+
+\fontsize{16}{12}\selectfont
+\noindent
+口試委員：
+
+{\centering
+\fontsize{16}{25}\selectfont
+
+
+\hspace{80pt} \underline{\hspace{18.15em}(簽名)} 
+
+
+(指導教授)
+
+\hspace{84pt} \underline{\hspace{8.825em}} \hspace{2.5em} \underline{\hspace{8.825em}}
+\vspace{30pt}
+
+\hspace{84pt} \underline{\hspace{8.825em}} \hspace{2.5em} \underline{\hspace{8.825em}}
+\vspace{30pt}
+
+\hspace{84pt} \underline{\hspace{8.825em}} \hspace{2.5em} \underline{\hspace{8.825em}}
+\vspace{30pt}
+
+\hspace{84pt} \underline{\hspace{8.825em}} \hspace{2.5em} \underline{\hspace{8.825em}}
+\vspace{30pt}
+
+}
+
+\fontsize{14}{25}\selectfont
+\noindent
+系主任、所長  \hspace{11pt}\fontsize{16}{25}\selectfont\underline{\hspace{13em} (簽名)} 
+\vspace*{20pt}
+
+\newpage
+
+} }
+
+% Environment to generate the english abstract page.
+\newenvironment{abstractEN} % {{{
+  %{\chapter*{\centerline{\theabstractnameEN}}%
+  {\chapter*{\theabstractnameEN}%
+	\addcontentsline{toc}{chapter}{\theabstractnameEN}%
+	\quotation}
+  {\endquotation\newpage} % }}}
+
+% Environment to generate the chinese abstract page.
+\newenvironment{abstractCH} % {{{
+  %{ \chapter*{\centerline{\theabstractnameCH}}%
+  { \chapter*{\theabstractnameCH}%
+	\addcontentsline{toc}{chapter}{\theabstractnameCH}%
+	\quotation}
+  {\endquotation\newpage} % }}}
+
+% Environment to generate the english acknowledgements page.
+\newenvironment{acknowledgementsEN} % {{{
+  %{\chapter*{\centerline{\theacknowledgementsnameEN}}%
+  {\chapter*{\theacknowledgementsnameEN}%
+	\addcontentsline{toc}{chapter}{\theacknowledgementsnameEN}%
+	\quotation}
+  {\endquotation\newpage} % }}}
+
+% Environment to generate the chinese acknowledgements page.
+\newenvironment{acknowledgementsCH} % {{{
+  %{	\chapter*{\centerline{\theacknowledgementsnameCH}}%
+  {	\chapter*{\theacknowledgementsnameCH}%
+	\addcontentsline{toc}{chapter}{\theacknowledgementsnameCH}%
+	\quotation}
+  {\endquotation\newpage} % }}}
+
+\input{ntuvars}
