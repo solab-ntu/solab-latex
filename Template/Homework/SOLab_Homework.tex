@@ -8,7 +8,7 @@
 \usepackage{subfigure} % \subfigure
 \usepackage{enumerate} % \begin{enumerate}
 \usepackage{bm} % \bm
-%\usepackage{amsmath, amsfonts, amssymb, mathtools} % provides miscellaneous enhancements of mathematical formulas
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % provides miscellaneous enhancements of mathematical formulas
 \usepackage{listings} % code showing
 \usepackage{pagecolor} % for code color define
 
@@ -43,9 +43,15 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\lstlistingname}{Code}
 
+% -- English Font and color
+%\renewcommand{\familydefault}{\ttdefault} 
+%\definecolor{EyeBlack}{HTML}{222222}
+%\definecolor{EyeGreen}{HTML}{76D38F}
+
 % -------------------------------------------------------------------------- %
 
 \begin{document}
+\begin{CJK}{UTF8}{bkai} % 中文字體: bsmi (明體), bkai (楷書), DFKai-SB 
 
 \title{\textbf{Homework 1}}
 \lhead{Course}
@@ -56,9 +62,19 @@
 \section{Problem 1}
 \subsection*{solution} % * (star) 代表不要出現在目錄
 
+說明，如下式 \ref{eq:1_1} 所示。
+
+\begin{equation}
+\begin{aligned}
+P_A &= (x_A,y_A,z_A) \\
+P_B &= (x_B,y_B,z_B)
+\end{aligned}
+\label{eq:1_1}
+\end{equation}
+
 \begin{align*}
-& P_A = (x_A,y_A,z_A)\\
-& P_B = (x_B,y_B,z_B)
+P_A &= (x_A,y_A,z_A) \\
+P_B &= (x_B,y_B,z_B)
 \end{align*}
 
 \newpage
@@ -69,4 +85,5 @@
 \lstinputlisting[language=Python, firstline=5, lastline=7, firstnumber=5]{./code.py}
 \lstinputlisting[language=Python, caption=demo, label=code:dwmo]{./code.py}
 
+\end{CJK}
 \end{document}

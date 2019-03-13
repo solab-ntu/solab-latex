@@ -11,7 +11,7 @@ SOLab Latex 教材、範本與風格文件。
 - [Equation and Debug](./Tutorial/Equation/Latex_equation.pdf)
 - [Figure](./Tutorial/Figure/Latex_Figure.pdf)
 - [Table](./Tutorial/Table/Latex_Table.pdf)
-- Citation
+- [Citation](./Tutorial/Citation.md)
 
 ## Template
 
