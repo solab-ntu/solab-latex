@@ -11,9 +11,9 @@
 \bibliography{bibfile}
 ```
 
-## 排序樣式 stylename
+## 樣式 stylename
 
-影響文中引用文獻的編號、以及其排列順序，標準排序樣式共有八種。
+影響文中引用文獻的編號、排序、格式，預設支援的樣式共有八種，其中我們常用的是 ieeetr。
 
 - plain
 - unsrt
@@ -24,4 +24,3 @@
 - ieeetr
 - siam
 
-我們常用的是 unsrt，按照文中引用的順序進行編號。
