@@ -1,5 +1,15 @@
 # Introduction
 
+- Install Compiler
+    - [Windos](#Windows)
+    - [Ubuntu](#Ubuntu)
+- Editor
+    - [TeXworks](#TeXworks)
+    - [VSCode](#VSCode-LaTex-Workshop)
+    - [Vim](#Vim-Terminal)
+- [Online Editor](#Online-Editor)
+- [IguanaTex](#IguanaTex)
+
 ## Install Compiler
 
 ### Windows
@@ -11,6 +21,9 @@
 ```bash
 sudo apt install texlive-full
 ```
+
+標楷體、新細明體 ... 等字型，請自行下載後放到 ```/usr/local/share/fonts/```
+
 
 ## Editor
 
@@ -36,10 +49,16 @@ sudo apt install texlive-full
 
 ![Intro-vscode](./pics/Intro-vim.png)
 
-## Online Editor & Compiler
+## Online Editor
 
 參考 https://www.overleaf.com/
 
 線上多人協同編輯與編譯器，缺點是編譯速度較慢、不確定是否支援 bibtex。
 
+## IguanaTex
 
+參考 http://www.jonathanleroux.org/software/iguanatex/
+
+在 PowerPoint 安裝增益集，可以插入 Latex 的方程式，安裝完成後，還需要安裝 GhostScript 與 ImageMagick，然後開啟 IguanaTex 的設定，如下圖。
+
+![Intro-iguanatex](./pics/Intro-iguanatex.png)
