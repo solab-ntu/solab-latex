@@ -31,5 +31,5 @@ SOLab Latex 教材、範本與風格文件。
 ## Style
 
 - Math
-- Citation
+- [Citation](./Style/Citation.md)
 
