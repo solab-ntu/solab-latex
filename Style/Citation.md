@@ -241,10 +241,14 @@
 %     - [Discussion]：討論區文章
 %     - [News Bulletin]：新聞
 %     - [Text File]：文字檔
+%     - [Video File]：影片檔
 
 % howpublished 前綴來源方法：
 %     - URL：網址
 %     - Available E-mail：電子信箱
+
+% note 紀錄擷取時間
+%     - Retrieved month day, year
 
 @misc{label,
   author        = {P. Isley}, 
@@ -258,5 +262,5 @@
 
 - H. P. Bacon, "The pig pen: Frequently asked questions about Pig Latin [WWW page]." URL https<span></span>://www<span></span>.test.org/test.<span></span>html.
 - N. Ontoast, "Communication games for the public school Pig Latin classroom. E-Journal of PL Studies [On-line serial], 16." Available E-mail: test<span></span>@test.com Message: get EJPLS, 1996.
--  台灣電力股份有限公司, "過去電力供需資訊 [WWW page]." URL http<span></span>://www<span></span>.taipower.<span></span>com.tw. 存取時間:2015-12-15.
+- 台灣電力股份有限公司, "過去電力供需資訊 [WWW page]." URL http<span></span>://www<span></span>.taipower.<span></span>com.tw. 存取時間:2015-12-15.
 
