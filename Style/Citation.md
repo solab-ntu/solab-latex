@@ -256,7 +256,7 @@
 }
 ```
 
-- H. P. Bacon, "The pig pen: Frequently asked questions about Pig Latin [WWW page]." URL https<span></span>://www.test.org/test.html.
+- H. P. Bacon, "The pig pen: Frequently asked questions about Pig Latin [WWW page]." URL https<span></span>://www<span></span>.test.org/test.<span></span>html.
 - N. Ontoast, "Communication games for the public school Pig Latin classroom. E-Journal of PL Studies [On-line serial], 16." Available E-mail: test<span></span>@test.com Message: get EJPLS, 1996.
--  台灣電力股份有限公司, "過去電力供需資訊 [WWW page]." URL http<span></span>://www.taipower.com.tw. 存取時間:2015-12-15.
+-  台灣電力股份有限公司, "過去電力供需資訊 [WWW page]." URL http<span></span>://www<span></span>.taipower.<span></span>com.tw. 存取時間:2015-12-15.
 
