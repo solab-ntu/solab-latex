@@ -1,4 +1,4 @@
-# SOLab Citation Styles
+# SOLab Citation Style
 
 說明一些 SOLab 文獻引用風格。
 

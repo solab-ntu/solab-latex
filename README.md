@@ -1,6 +1,6 @@
 # solab-latex
 
-SOLab Latex 教材、範本與風格文件。
+SOLab Latex 教材、風格與範本文件。
 
 ## Tutorial
 
@@ -13,6 +13,11 @@ SOLab Latex 教材、範本與風格文件。
 - [Table](./Tutorial/Table/Latex_Table.pdf)
 - [Citation](./Tutorial/Citation.md)
 
+## Style
+
+- [Math](./Style/Math.md)
+- [Citation](./Style/Citation.md)
+
 ## Template
 
 - [Comment](./Template/Comment/SOLab_Comment.pdf)
@@ -22,14 +27,8 @@ SOLab Latex 教材、範本與風格文件。
     - [SOLab](./Template/Paper/SOLab/SOLab_Paper.pdf)
     - [ASME Conference](./Template/Paper/ASME_Conference/asme2e.pdf)
     - ASME Journal
-- Project
 - [Review](./Template/Review/SOLab_Review.pdf)
 - Thesis
     - [Chinese](./Template/Thesis/Chinese/thesis.pdf)
     - [English](./Template/Thesis/English/README.md)
-
-## Style
-
-- Math
-- [Citation](./Style/Citation.md)
 
