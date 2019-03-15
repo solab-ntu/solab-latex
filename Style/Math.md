@@ -7,20 +7,20 @@
 1. 正體代表單位或文字
 
     ![](pics/big.png) &nbsp;&nbsp;&nbsp;&nbsp; ![](pics/small.png)
-
-2. 小寫斜體代表定性變數
+    $\mathrm{x}$, $\mathrm{X}$
+2. 小寫斜體代表定性變數 $x$, $\mathbf x$
 
     ![](pics/small_italic.png)
 
-3. 大寫斜體、\mathcal、\varepsilon **可代表** 隨機變數
+3. 大寫斜體、\mathcal、\varepsilon **可代表** 隨機變數 $X$, $\mathcal X$, $\varepsilon$
 
     ![](pics/big_italic.png) &nbsp;&nbsp;&nbsp;&nbsp; ![](pics/mathcal.png) &nbsp;&nbsp;&nbsp;&nbsp; ![](pics/varepsilon.png)
 
-4. 細體代表純量
+4. 細體代表純量 $x$
 
     ![](pics/small_italic.png)
 
-5. 粗體代表向量、矩陣
+5. 粗體代表向量、矩陣 $\mathbf x$, $\mathbf X$
 
     ![](pics/small_bold.png)
 

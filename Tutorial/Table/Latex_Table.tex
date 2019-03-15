@@ -97,7 +97,7 @@
 當文件中需要使用普通表格(不超過頁面)時，可使用以下指令製表，結果如下表 1.1，注意要點如下：
 \begin{itemize}
     \item 程式碼第一的 [h] 為強制此表格的相對位置，若不輸入此命令，表格會被自動放置於頁面最上或最下方。
-    \item 程式碼第五行 $| l | c | c |$ 代表第一欄靠左對齊，第二三攔置中對齊。
+    \item 程式碼第五行 $| l | c | c |$ 代表第一欄靠左對齊，第二三欄置中對齊。
     \item 表號指令 "\textbackslash caption"不可寫在 "\textbackslash end\textbraceleft tabular\textbraceright" 後面，否則標註會落於表格下方。
     \item 如需定義表格長度，可在後面補上長度指令，例如：\textbackslash makebox[3cm] [l] ，其中 [l] 為置左，也可用置中 [c]或置右 [r] 代替。
     \item {\bf \textcolor{red}{如遭遇表號(caption)打中文而編譯失敗時，可在文件尾端 \textbackslash end \textbraceleft CJK\textbraceright 的前面加入 "\textbackslash clearpage "指令，並刪除.tex檔以外的同名檔案，重新開啟 Latex 即可。}}

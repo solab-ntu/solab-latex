@@ -14,6 +14,7 @@
 \usepackage{bm}
 \usepackage{multirow} 
 \usepackage{bigdelim}
+\usepackage{booktabs}
 %\usepackage[]{mcode}
 
 % % line spacing 
@@ -26,6 +27,8 @@
 \newcommand{\oneandahalfspacing}{\setlength{\baselineskip}{1.33 \defbaselineskip}}
 \newcommand{\doublespacing}{\setlength{\baselineskip}{1.67 \defbaselineskip}}
 
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{10pt}
 
 %\renewcommand{\arraystretch}{1.5}
 
@@ -100,7 +103,7 @@
 \indent這個部分還可以加入其他參數進行設定，如文章式單欄還是雙欄、數學式靠左靠右(預設為置中)等等，若要加以設定則參數與參數之間加上逗點即可。\\
 至於文章種類較常使用的有兩種：\\
 \indent article(一般短文)：沒有分章節，頁為連續。\\
-\indent report(論文or報告)：新的一章會自動從新的一頁開始。
+\indent report(論文或報告)：新的一章會自動從新的一頁開始。
 
 \subsection{巨集套件}
 在基本設定區,，我們需要將會使用到的工具組匯入環境中，這些工具組稱為巨集套件，一般格式如下：
@@ -495,10 +498,10 @@ bottom=2.5cm：將下邊界設定為2.5公分
 
 \subsection{隨文模式（math in line mode）}
 使用下面的方法可以直接進入隨文數學模式：\\
-\verb|$ 數學式 $|：就這就是前面小節所使用的方法，這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 $F=ma$ 。在這種模式下數學式就會隨著內文一起呈現。
+\verb|$ 數學式 $| 或 \verb|\( 數學式 \)|：這就是前面小節所使用的方法，這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 \(F=ma\) 。在這種模式下數學式就會隨著內文一起呈現。
 		\begin{framed}
 			\begin{verbatim}
-			這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 $F=ma$ 。在這種模式下數學式就會隨著內文一起呈現。
+			這個方法通常用來插入簡單的數學式 $f(x)$ 或符號 \(F=ma\) 。在這種模式下數學式就會隨著內文一起呈現。
 			\end{verbatim}
 		\end{framed}
 
@@ -539,7 +542,7 @@ bottom=2.5cm：將下邊界設定為2.5公分
 \section{矩陣與多行方程式}
 
 \subsection{矩陣}
-沒有外括號的矩陣可以透過 \verb|\begin{array} 矩陣內容 \end{array}| 來達成，矩陣內部的寫法64都是使用 \& 將各個欄位分開。
+沒有外括號的矩陣可以透過 \verb|\begin{array} 矩陣內容 \end{array}| 來達成，矩陣內部的寫法都是使用 \& 將各個欄位分開。
 	\begin{equation}
 		\begin{array}{ccc}
 		a & b & c \\
@@ -644,7 +647,7 @@ f(x) =\quad & x^2-(a+b)x+ab\\
 \end{verbatim}
 \end{framed}
 
-若我們並不需要方程式的子標號，這時候只要在 \verb|align| 環境中再使用 \verb|split| 環境包起來即可。
+若我們只需要使用一個編號來表示多行方程式，這時候只要在 \verb|align| 環境中再使用 \verb|split| 環境包起來即可。
 \begin{align}
 \begin{split}
 f(x) =\quad & x^2-(a+b)x+ab\\
@@ -665,19 +668,40 @@ f(x) =\quad & x^2-(a+b)x+ab\\
 \end{verbatim}
 \end{framed}
 
+若想要使用更詳細的方程式子編號，則可以使用 \verb|subequations| 把整個 \verb|align| 環境包起來。
+\begin{subequations}
+\begin{align}
+f(x) =\quad & x^2-(a+b)x+ab\\
+	=\quad & x^2-ax-bx+ab\\
+	=\quad &  (x-a)(x-b)
+\end{align}
+\end{subequations}
+
+\begin{framed}
+\begin{verbatim}
+\begin{subequations}
+\begin{align}
+f(x) =\quad & x^2-(a+b)x+ab\\
+	=\quad & x^2-ax-bx+ab\\
+	=\quad &  (x-a)(x-b)
+\end{align}
+\end{subequations}
+\end{verbatim}
+\end{framed}
+
 \section{Exercise}
 \begin{enumerate}
 	\item 試打出下列數學式\\
 	\begin{equation}
-	 f(x,\mu,\sigma) = \frac{1}{\sigma \sqrt{2\pi}}(\frac{x-\mu}{\sigma})^2
+	f(x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 	\end{equation}
 	
 	\item 試打出一般最佳化方程式\\
 	\begin{align}
 	\begin{split}
-	\min_x \quad & f(x) \\
-	\mbox{s.t.} \quad & g(x) \le 0\\
-	& h(x) = 0 
+	\min_\mathbf{x} \quad & f(\mathbf{x}) \\
+	\mbox{s.t.} \quad & \mathbf{g}(\mathbf{x}) \le 0\\
+	& \mathbf{h}(\mathbf{x}) = 0
 	\end{split}
 	\end{align}
 \end{enumerate}
@@ -725,8 +749,28 @@ f(x) =\quad & x^2-(a+b)x+ab\\
 \begin{itemize}
 \item 第一行最後面的 \verb|[!h]| 與圖片使用方式相同。
 \item \textcolor{red}{表格的 caption 需要放在表格之前。}
-\item \textbf{縱線、項目對齊方式}：表格的縱線在表格插入時(第五行)就設定好了：需要幾個比較項目、表格中每個項目的對齊方式、項目之間需要幾條縱線也都是在這裡設定。
-\item \textbf{橫線}：表格的橫線則是使用 \verb|\hline| 指令插入，用幾次指令就可以得到幾條橫線。
+\item \textcolor{red}{\LaTeX 預設的標題和表格間距為 0，看起來會很擠}。本文在環境設定區有修改設定，將圖片與表格標題和圖表間距設定為 10。
+\begin{framed}
+\begin{verbatim}
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{10pt}
+\end{verbatim}
+\end{framed}
+\item \textbf{縱線、項目對齊方式}：表格的縱線在表格插入時(第五行)就設定好了：需要幾個比較項目、表格中每個項目的對齊方式、項目之間需要幾條縱線也都是在這裡設定。但\textcolor{red}{學術論文或原文書上的表格，都不會有縱線，此處只是說明\LaTeX有這個功能。}
+\item \textbf{橫線}：表格的橫線則是使用 \verb|\hline| 指令插入，用幾次指令就可以得到幾條橫線。若覺得單一粗細的橫線所繪出的表格不夠美觀，可以使用 \verb|booktabs| 套件。此套件中的指令 \verb|\toprule|、\verb|\midrule|、\verb|\bottoomrule| 可以針對不同位置的線條調整粗細，呈現出的效果可參考表 \ref{t_2}。
+	\begin{table}[!h]
+		\caption{table 2}
+		\label{t_2}
+		\centering
+		\begin{tabular}{clc}
+		\toprule
+		Compare item & Cost & {Price}\\
+		\midrule
+		Item 1 & 200 & 200 \\
+		Item 2 & 300 & 200 \\
+		\bottomrule
+		\end{tabular}
+	\end{table}
 \item 項目細節：LaTeX預設的項目格子大小就是文字長度，對齊方式則是居中；若要更改這些設定需要用到 \verb|\makebox| 指令加以修改，其格式為：
 \begin{framed}
 \begin{verbatim}

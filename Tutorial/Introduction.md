@@ -3,6 +3,7 @@
 - Install Compiler
     - [Windows](#Windows)
     - [Ubuntu](#Ubuntu)
+    - [Fonts](#Fonts)
 - Editor
     - [TeXworks](#TeXworks)
     - [VSCode](#VSCode-LaTex-Workshop)
@@ -33,6 +34,10 @@ sudo apt install texlive-full
 ```
 
 若有缺少的 Package (.sty)，自行下載後放在與文件相同資料夾即可。
+
+### Fonts
+
+中文的檔案，除了使用 Windows 和 Ubuntu 內建的字型之外，建議另外安裝 cwtex-q-fonts (https://github.com/l10n-tw/cwtex-q-fonts)，並使用 xeLaTex 針對不同的字型進行設定。
 
 ## Editor
 
