@@ -1,7 +1,7 @@
 # Introduction
 
 - Install Compiler
-    - [Windos](#Windows)
+    - [Windows](#Windows)
     - [Ubuntu](#Ubuntu)
 - Editor
     - [TeXworks](#TeXworks)
