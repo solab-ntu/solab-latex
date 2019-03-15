@@ -7,8 +7,10 @@
     - [TeXworks](#TeXworks)
     - [VSCode](#VSCode-LaTex-Workshop)
     - [Vim](#Vim-Terminal)
-- [Online Editor](#Online-Editor)
-- [IguanaTex](#IguanaTex)
+- Online Editor
+    - [Overleaf](#Overleaf)
+- PowerPoint Extension
+    - [IguanaTex](#IguanaTex)
 
 ## Install Compiler
 
@@ -16,14 +18,21 @@
 
 下載並安裝 MiKTeX (https://miktex.org/download)
 
+編譯文件的過程中會顯示需要安裝的 Package。
+
 ### Ubuntu
 
 ```bash
 sudo apt install texlive-full
 ```
 
-標楷體、新細明體 ... 等字型，請自行下載後放到 ```/usr/local/share/fonts/```
+標楷體、新細明體 ... 等字型，自行下載後 (或是由 Windows 的 C:/Windows/Fonts/ 中複製)，放在以下 Ubuntu 的資料夾
 
+```
+/usr/local/share/fonts/
+```
+
+若有缺少的 Package (.sty)，自行下載後放在與文件相同資料夾即可。
 
 ## Editor
 
@@ -51,11 +60,15 @@ sudo apt install texlive-full
 
 ## Online Editor
 
+### Overleaf
+
 參考 https://www.overleaf.com/
 
 線上多人協同編輯與編譯器，缺點是編譯速度較慢、不確定是否支援 bibtex。
 
-## IguanaTex
+## PowerPoint Extension
+
+### IguanaTex
 
 參考 http://www.jonathanleroux.org/software/iguanatex/
 
