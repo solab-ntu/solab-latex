@@ -6,6 +6,8 @@
 
 1. 正體代表單位或文字
 
+    ![](pics/big.png) &nbsp;&nbsp;&nbsp;&nbsp; ![](pics/small.png)
+
 2. 小寫斜體代表定性變數
 
     ![](pics/small_italic.png)
