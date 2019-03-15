@@ -1,5 +1,9 @@
 # Compile
 
+- [TeXworks](#TeXworks)
+- [VSCode](#VSCode)
+- [Terminal](#Terminal)
+
 ## TeXworks
 
 工具列 File -> Preference 可以看到下圖視窗，可以看到編譯程式與順序。
@@ -24,20 +28,20 @@
 
 直接在 terminal 輸入命令進行編譯，主要使用 pdflatex 或是 xelatex。
 
-latex 編譯器不支援增量編譯，因此當文件中有目錄時，則需要 .toc 檔存在才能將目錄加入文件，同理，當有引用文獻時，則需要 .aux 檔存在。因此根據文件內容的不同，時常會使用好幾次命令執行編譯。
+LaTeX 編譯器不支援增量編譯，因此當文件中有目錄或是引用文獻時，則需要 .toc 或 .aux 檔存在，因此根據文件內容的不同，有時會需要好幾次命令執行編譯。
 
 - 文件
 ```bash
 pdflatex file.tex
 ```
 
-- 目錄 \tableofcontents
+- 包含目錄 \tableofcontents
 ```bash
 pdflatex file.tex
 pdflatex file.tex
 ```
 
-- 文獻 \bibliography
+- 包含文獻 \bibliography
 ```bash
 pdflatex file.tex
 bibtex   file.aux

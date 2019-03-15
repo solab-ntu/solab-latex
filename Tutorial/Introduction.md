@@ -52,7 +52,7 @@ sudo apt install texlive-full
 
 ![Intro-vscode](./pics/Intro-vscode.png)
 
-### Vim + Terminal
+### Vim + Okular
 
 下圖使用 vim 編輯，手動輸入命令進行編譯，使用 okular 瀏覽 pdf。
 
@@ -72,6 +72,6 @@ sudo apt install texlive-full
 
 參考 http://www.jonathanleroux.org/software/iguanatex/
 
-在 PowerPoint 安裝增益集，可以插入 Latex 的方程式，安裝完成後，還需要安裝 GhostScript 與 ImageMagick，然後開啟 IguanaTex 的設定，如下圖。
+在 Windows 安裝了 Miktex 與 PowerPoint 後，在 PowerPoint 安裝 IguanaTex 增益集，可以在投影片中插入 LaTeX 的方程式，安裝完成後，還需要安裝 GhostScript 與 ImageMagick，然後開啟 IguanaTex 的設定，如下圖。
 
 ![Intro-iguanatex](./pics/Intro-iguanatex.png)
