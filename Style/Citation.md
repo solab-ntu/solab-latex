@@ -128,16 +128,18 @@
 % 教育、商業機構的技術報告
 
 @techreport{label,
-  author       = {P. Lambert}, 
-  title        = {The title of the work},
-  institution  = {The institution that published},
-  address      = {The address of the publisher},
-  year         = 1993,
-  number       = 2,
-  month        = 7,
-  note         = {An optional note}
+  author     = {P. Lambert}, 
+  title      = {The title of the work},
+  publisher  = {Profanity Institute},
+  address    = {New York NY},
+  year       = 1993,
+  volume     = 249,
+  number     = 2,
+  month      = 7,
 }
 ```
+
+- R. Swearingen. Morpholoty and syntax of british sailors’ english. Technical report, New York NY, 1985.
 
 ## 技術文件 Manual
 
