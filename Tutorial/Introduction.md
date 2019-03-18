@@ -6,8 +6,8 @@
     - [Fonts](#Fonts)
 - Editor
     - [TeXworks](#TeXworks)
-    - [VSCode](#VSCode-LaTex-Workshop)
-    - [Vim](#Vim-Terminal)
+    - [VSCode](#VSCode)
+    - [Vim](#Vim)
 - Online Editor
     - [Overleaf](#Overleaf)
 - PowerPoint Extension
@@ -49,7 +49,7 @@ sudo apt install texlive-full
 
 ![Intro-texworks](./pics/Intro-texworks.png)
 
-### VSCode + LaTeX Workshop
+### VSCode
 
 至 https://code.visualstudio.com/ 下載。
 
@@ -57,7 +57,7 @@ sudo apt install texlive-full
 
 ![Intro-vscode](./pics/Intro-vscode.png)
 
-### Vim + Okular
+### Vim
 
 下圖使用 vim 編輯、使用 okular 瀏覽 pdf，手動輸入命令進行編譯。
 
