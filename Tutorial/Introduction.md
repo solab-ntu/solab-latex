@@ -53,13 +53,13 @@ sudo apt install texlive-full
 
 至 https://code.visualstudio.com/ 下載。
 
-開啟 extension 搜尋 Latex Workshop 並安裝，此擴充套件提供 VSCode 編譯、語法顏色、自動補全 Latex 等功能。
+開啟 extension 搜尋 Latex Workshop 並安裝，此擴充套件提供 VSCode 呼叫編譯器、語法顏色、自動補全等功能。
 
 ![Intro-vscode](./pics/Intro-vscode.png)
 
 ### Vim + Okular
 
-下圖使用 vim 編輯，手動輸入命令進行編譯，使用 okular 瀏覽 pdf。
+下圖使用 vim 編輯、使用 okular 瀏覽 pdf，手動輸入命令進行編譯。
 
 ![Intro-vscode](./pics/Intro-vim.png)
 
@@ -69,7 +69,7 @@ sudo apt install texlive-full
 
 參考 https://www.overleaf.com/
 
-線上多人協同編輯與編譯器，缺點是編譯速度較慢、不確定是否支援 bibtex。
+線上多人協同編輯與編譯器，缺點是編譯速度較慢。
 
 ## PowerPoint Extension
 
@@ -77,6 +77,6 @@ sudo apt install texlive-full
 
 參考 http://www.jonathanleroux.org/software/iguanatex/
 
-在 Windows 安裝了 Miktex 與 PowerPoint 後，在 PowerPoint 安裝 IguanaTex 增益集，可以在投影片中插入 LaTeX 的方程式，安裝完成後，還需要安裝 GhostScript 與 ImageMagick，然後開啟 IguanaTex 的設定，如下圖。
+在 Windows 作業系統下安裝了 Miktex 與 PowerPoint 後，可以在 PowerPoint 安裝 IguanaTex 增益集，它提供了在投影片中插入 LaTeX 方程式的功能。注意安裝完成後，還需要安裝 GhostScript 與 ImageMagick，並修改 IguanaTex 相關設定，如下圖。
 
 ![Intro-iguanatex](./pics/Intro-iguanatex.png)
