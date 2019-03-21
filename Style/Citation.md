@@ -1,24 +1,19 @@
 # SOLab Citation Style
 
-說明一些 SOLab 文獻引用風格。
-
-參考資料 [1] [2] [3] [4]
-
-[1]: https://pitt.libguides.com/c.php?g=12108&p=64730
-[2]: https://zh.wikipedia.org/wiki/BibTeX
-[3]: http://linguistics.byu.edu/faculty/henrichsen/APA/APA01.html
-[4]: https://verbosus.com/bibtex-style-examples.html
+說明 SOLab 文獻引用風格。
 
 ---
 
 - [風格](#風格)
-- [期刊論文 Journal Paper](#期刊-Journal-Paper)
-- [研討會論文 Conference Paper](#研討會-Conference-Paper)
-- [碩博士論文 Master/Doctoral Thesis](#碩博士論文-Master/Doctoral-Thesis)
-- [技術報告 Technique Report](#技術報告-Technique-Report)
-- [技術文件 Manual](#技術報告-Technique-Report)
-- [書籍 Book](#書籍-Book)
-- [網頁 Websites](#網頁-Websites)
+- [範本](#範本)
+    - [期刊論文 Journal Paper](#期刊-Journal-Paper)
+    - [研討會論文 Conference Paper](#研討會-Conference-Paper)
+    - [碩博士論文 Master/Doctoral Thesis](#碩博士論文-Master/Doctoral-Thesis)
+    - [技術報告 Technique Report](#技術報告-Technique-Report)
+    - [技術文件 Manual](#技術報告-Technique-Report)
+    - [書籍 Book](#書籍-Book)
+    - [網頁 Websites](#網頁-Websites)
+- [補充說明](#補充說明)
 
 ---
 
@@ -30,7 +25,9 @@
 - 中文姓名依照作者拼音法，使用威妥瑪拼音則用 "-" 區隔名；使用漢語拼音則用開頭字母，如：黃廣州 (威妥瑪 K.-C. Huang；漢語 K. Huang)。
 - 若作者為某組織，則直接用組織名稱。
 
-## 期刊論文 Journal Paper
+## 範本
+
+### 期刊論文 Journal Paper
 
 ```bibtex
 % 期刊雜誌的論文
@@ -68,7 +65,7 @@
 - A. Nala, "Teaching vocabulary: Evidence from research in Pig Latin." Unpublished manuscript, Brigham Young University, Provo, UT., 1998.
 - F. Roosevelt, "Childhood acquisition of Pig Latin by native speakers of English." Manuscript submitted for publication, 1997.
 
-## 研討會論文 Conference Paper
+### 研討會論文 Conference Paper
 
 ```bibtex
 % 會議論文集中的論文
@@ -90,7 +87,7 @@
 
 - Z. Gao, P. Wang, L. Bertling, and J. Wang, “Sizing of Energy Storage for Power Systems with Wind Farms Based on Reliability Cost and Wroth Analysis.” in _Power and Energy Society General Meeting, 2011 IEEE_, (Detroit, MI, United States), pp. 1–7, 2011.
 
-## 碩博士論文 Master/Doctoral Thesis
+### 碩博士論文 Master/Doctoral Thesis
 
 ```bibtex
 % 碩士論文
@@ -122,7 +119,7 @@
 - V. Nannen, _The Paradox of Overfitting._ PhD thesis, Rijksuniversiteit Groningen, the Netherlands, 2003.
 
 
-## 技術報告 Technique Report
+### 技術報告 Technique Report
 
 ```bibtex
 % 教育、商業機構的技術報告
@@ -141,7 +138,7 @@
 
 - R. Swearingen. Morpholoty and syntax of british sailors’ english. Technical report, New York NY, 1985.
 
-## 技術文件 Manual
+### 技術文件 Manual
 
 ```bibtex
 % 技術文檔
@@ -158,7 +155,7 @@
 }
 ```
 
-## 書籍 Book
+### 書籍 Book
 
 ```bibtex
 % 公開出版的圖書
@@ -232,7 +229,7 @@
 }
 ```
 
-## 網頁 Websites
+### 網頁 Websites
 
 ```bibtex
 % 政府、個人、新聞、線上期刊 ... 等網頁資料
@@ -266,3 +263,38 @@
 - N. Ontoast, "Communication games for the public school Pig Latin classroom. E-Journal of PL Studies [On-line serial], 16." Available E-mail: test<span></span>@test.com Message: get EJPLS, 1996.
 - 台灣電力股份有限公司, "過去電力供需資訊 [WWW page]." URL http<span></span>://www<span></span>.taipower.<span></span>com.tw. 存取時間:2015-12-15.
 
+---
+
+## 補充說明
+
+- Definition
+
+    - Referencing: creating a bibliographic description (a reference) of a source used in an accurate and consistent way.
+    - Citing: referring from the text to the sources used.
+
+    In fewer words, to avoid plagiarism, when using other people’s work in one’s paper, credit needs to be given to the original author in the reference section.
+
+- The different citations in a text
+
+    - Harvard system (name and date)
+
+        ![](pics/harvard_system.png)
+
+    - Numeric system
+
+        ![](pics/numeric_system.png)
+
+- Illustration
+
+    ![](pics/illustration.png)
+
+---
+
+## 參考資料
+
+1. [Citation Styles: APA, MLA, Chicago, Turabian, IEEE: APA 6th Edition](https://pitt.libguides.com/c.php?g=12108&p=64730)
+2. [BibTeX wiki](https://zh.wikipedia.org/wiki/BibTeX)
+3. [linguistics.byu.edu APA01](http://linguistics.byu.edu/faculty/henrichsen/APA/APA01.html)
+4. [verbosus.com](https://verbosus.com/bibtex-style-examples.html)
+5. [Bournemouth Univ., 2012. How to cite references: BU Harvard style](http://www.bournemouth.ac.uk)
+6. [The University of Nottingham, 2013/2014. How to cite references](http://www.nottingham.ac.uk)
