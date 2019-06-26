@@ -77,7 +77,15 @@ sudo apt install texlive-full
 
 在 Windows 作業系統下安裝了 Miktex 與 PowerPoint 後，可以在 PowerPoint 安裝 IguanaTex 增益集，它提供了在投影片中插入 LaTeX 方程式的功能。注意安裝完成後，還需要安裝 GhostScript 與 ImageMagick，並修改 IguanaTex 相關設定，如下圖。
 
-![](./pics/Intro-iguanatex.png)
+![](./pics/Intro-iguanatex2.png)
+
+### Ex­cel2LATEX
+
+參考 https://www.ctan.org/tex-archive/support/excel2latex
+
+在 Excel 內安裝 excel2latex 增益集，它提供將選取的儲存格轉成 LaTex 表格。
+
+![](./pics/UNKCihT.png)
 
 ### Mathpix
 
@@ -85,5 +93,5 @@ sudo apt install texlive-full
 
 辨識方程式圖片，轉成 latex script，跨平台、目前還沒看到收費。
 
-![](https://mathpix.com/images/snip-page/gif_2.gif)
-![](https://mathpix.com/images/snip-page/gif_3.gif)
+![](./pics//gif_2.gif)
+![](./pics//gif_3.gif)
