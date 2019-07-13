@@ -20,14 +20,14 @@ SOLab Latex 教材、風格與範本文件。
 
 ## Template
 
-- [Comment](./Template/Comment/SOLab_Comment.pdf)
-- [Homework](./Template/Homework/SOLab_Homework.pdf)
-- [Meeting Note](./Template/Meeting_Note/SOLab_Meeting_Note.pdf)
+- [Comment](./Template/Comment)
+- [Homework](./Template/Homework)
+- [Meeting Note](./Template/Meeting_Note)
 - Paper
-    - [SOLab](./Template/Paper/SOLab/SOLab_Paper.pdf)
-    - [ASME Conference](./Template/Paper/ASME_Conference/asme2e.pdf)
+    - [SOLab](./Template/Paper/SOLab)
+    - [ASME Conference](./Template/Paper/ASME_Conference)
     - ASME Journal
-- [Review](./Template/Review/SOLab_Review.pdf)
+- [Review](./Template/Review)
 - Thesis
     - [Chinese](./Template/Thesis/README.md)
     - [English](./Template/Thesis/English/README.md)
