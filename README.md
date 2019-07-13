@@ -12,6 +12,7 @@ SOLab Latex 教材、風格與範本文件。
 - [Figure](./Tutorial/Figure/Latex_Figure.pdf)
 - [Table](./Tutorial/Table/Latex_Table.pdf)
 - [Citation](./Tutorial/Citation.md)
+- [Others](./Tutorial/Others.md)
 
 ## Style
 
