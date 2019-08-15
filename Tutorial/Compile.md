@@ -20,9 +20,72 @@
 
 ![](./pics/Compile-vscode1.png)
 
-其編譯程序可以打開 settings.json 設定，如下圖 latex-workshop.latex.tools 與 latex-workshop.latex.recipes 兩個變數，其內容可以參考下一節 Terminal 命令。
+其編譯程序可以打開 settings.json 設定，如下圖 latex-workshop.latex.tools 與 latex-workshop.latex.recipes 兩個變數。
 
 ![](./pics/Compile-vscode2.png)
+
+其內容可以參考下方或下一節 Terminal 命令。
+```
+{
+    "workbench.settings.editor": "json",
+    // https://zhuanlan.zhihu.com/p/38178015
+    "latex-workshop.latex.tools": [
+        {
+            // 编译工具和命令 
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ]
+}
+```
+
+設定 wordWrap: open the command pallette (ctrl - shift - p), select Preferences: `Configure language specific settings...` and select the latex language. Then add the following:
+```
+"[latex]": {
+    "editor.wordWrap": "on"
+},
+```
 
 ## Terminal
 
