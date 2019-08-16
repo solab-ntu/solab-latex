@@ -24,7 +24,7 @@
 
 ![](./pics/Compile-vscode2.png)
 
-其內容可以參考下方或下一節 Terminal 命令。
+其內容可以參考下方或下一節 Terminal 命令。[參考](https://zhuanlan.zhihu.com/p/38178015)
 ```
 {
     "workbench.settings.editor": "json",
@@ -79,7 +79,7 @@
     ]
 }
 ```
-
+Recipes 第一個為預設，也可以將`xe->bib->xe->xe`放在第一個，但速度較慢。
 設定 wordWrap: open the command pallette (ctrl - shift - p), select Preferences: `Configure language specific settings...` and select the latex language. Then add the following:
 ```
 "[latex]": {
