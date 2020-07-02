@@ -1,6 +1,6 @@
 \documentclass[12pt, a4paper]{article}
 
-\usepackage{CJKutf8}
+\usepackage{xeCJK}
 \usepackage[margin=2.0cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{amsmath, amssymb, amsfonts}
@@ -8,7 +8,10 @@
 \usepackage{pagecolor} % for code color define
 \usepackage{tocloft}
 
-% ---------------------------------------------
+% -- 字型 (https://www.overleaf.com/help/193#!CJK)
+\setCJKmainfont{cwTeXKai}
+
+% -- 段落格式
 \setlength{\headheight}{28pt}
 \pagestyle{fancy}
 \fancyhf{}
@@ -16,7 +19,8 @@
 \setlength{\parskip}{0.5em}
 \setcounter{secnumdepth}{-1}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-% -- code style
+
+% -- 程式碼
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -41,17 +45,17 @@
     extendedchars=false
 }
 \lstset{style=pystyle}
+
 % ---------------------------------------------
 
 \begin{document}
-\begin{CJK}{UTF8}{bkai}
 
 \chead{\textbf{Homework 1}}
-\lhead{Course}
-\rhead{Name1\\ Name2}
+\lhead{課程名稱}
+\rhead{姓名 1\\ 姓名 2}
 \cfoot{\thepage}
 
-\ ~ \
+% \ ~ \
 
 \tableofcontents\thispagestyle{fancy}
 
@@ -67,6 +71,7 @@
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
+
 \clearpage
 \section{Problem 2}
 
@@ -80,5 +85,4 @@
 \section{Problem 4}
 
 \clearpage
-\end{CJK}
 \end{document}
