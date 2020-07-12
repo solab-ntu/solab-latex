@@ -1,6 +1,6 @@
 # SOLab Citation Style
 
-說明 SOLab 文獻引用風格。
+說明引用文獻風格。
 
 ---
 
