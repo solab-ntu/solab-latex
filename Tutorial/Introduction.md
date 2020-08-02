@@ -44,6 +44,11 @@ sudo apt install texlive-full
 /usr/local/share/fonts/
 ```
 
+或是
+```
+~/.local/share/fonts/
+```
+
 **字型 Fonts**
 
 建議另外安裝 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，並使用 XeLaTeX 針對不同的字型進行設定。
