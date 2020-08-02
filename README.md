@@ -6,11 +6,11 @@ SOLab Latex 教材、風格與範本文件。
 
 - [Introduction](./Tutorial/Introduction.md)
 - [Compile](./Tutorial/Compile.md)
-- [Overview](./Tutorial/Overview/Latex_overview.pdf)
-- [Basic and Text Adjustment](./Tutorial/Basic/Latex_basic_and_text_adjustment.pdf)
-- [Equation and Debug](./Tutorial/Equation/Latex_equation.pdf)
-- [Figure](./Tutorial/Figure/Latex_Figure.pdf)
-- [Table](./Tutorial/Table/Latex_Table.pdf)
+- [Overview](./Tutorial/Overview/)
+- [Basic and Text Adjustment](./Tutorial/Basic/)
+- [Equation and Debug](./Tutorial/Equation/)
+- [Figure](./Tutorial/Figure/)
+- [Table](./Tutorial/Table/)
 - [Citation](./Tutorial/Citation.md)
 - [Others](./Tutorial/Others.md)
 

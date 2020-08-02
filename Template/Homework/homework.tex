@@ -8,7 +8,9 @@
 \usepackage{pagecolor} % for code color define
 \usepackage{tocloft}
 
-% -- 字型 (https://www.overleaf.com/help/193#!CJK)
+% -- 字型
+% -- https://www.overleaf.com/help/193#!CJK
+% -- https://www.ffonts.net/cwTeXKai.font.download
 \setCJKmainfont{cwTeXKai}
 
 % -- 段落格式
@@ -20,27 +22,37 @@
 \setcounter{secnumdepth}{-1}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-% -- 程式碼
+% -- 圖, 表標題使用中文取代
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+
+% -- 圖、表標題與圖表之間距離
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{10pt}
+
+% \renewcommand{\section}[2]{}
+
+% -- 顯示程式碼格式
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \lstdefinestyle{pystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\footnotesize\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
     extendedchars=false
 }
@@ -63,7 +75,7 @@
 
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 
-\subsection*{Sol}
+\subsection*{Solution}
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 \begin{equation*}
     a = \sum_{i=1}^{10} k_i
@@ -78,6 +90,12 @@
 \lstinputlisting[language=Python, firstline=5, lastline=7, firstnumber=5]{./code.py}
 \lstinputlisting[language=Python, caption=demo, label=code:dwmo]{./code.py}
 
+根據文獻 \cite{Chen2017b}
+
+根據文獻 \cite{Features2018b}
+
+根據文獻 \cite{Szeliski2010b}
+
 \clearpage
 \section{Problem 3}
 
@@ -85,4 +103,13 @@
 \section{Problem 4}
 
 \clearpage
+
+\section{References}
+% -- 隱藏預設參考文獻標題
+\begingroup
+    \renewcommand{\section}[2]{}
+    \bibliographystyle{ieeetr}
+    \bibliography{ref.bib}
+\endgroup
+
 \end{document}

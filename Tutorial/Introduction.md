@@ -3,7 +3,6 @@
 - Install Compiler
     - [Windows](#Windows)
     - [Ubuntu](#Ubuntu)
-    - [Fonts](#Fonts)
 - Editor
     - [TeXworks](#TeXworks)
     - [VSCode](#VSCode)
@@ -13,33 +12,45 @@
     - [IguanaTex](#IguanaTex)
     - [Mathpix](#Mathpix)
 
-## Install Compiler
+---
+
+## 1. Install Compiler
+
+使用 LaTeX 需要一個編譯器，將使用者撰寫的指令稿編譯成 pdf 檔，而目前對於內文含中文的文件來說，XeLaTeX 是最常用的編譯器。以下分為 Window 與 Linux 環境的安裝說明。
 
 ### Windows
 
-下載並安裝 MiKTeX ( https://miktex.org/download )
+安裝 MiKTeX ( https://miktex.org/download )
 
-編譯文件的過程中會顯示需要安裝的 Package。
+編譯文件的過程中若有缺少的 Package (.sty)，MikTex 會顯示安裝提示。若是自行下載的 Package，則放在與文件相同資聊夾下即可。
+
+缺少的字體，下載後放在以下資料夾：
+
+```
+C:/Windows/Fonts/
+```
 
 ### Ubuntu
+
+安裝 texlive-full
 
 ```bash
 sudo apt install texlive-full
 ```
 
-標楷體、新細明體 ... 等字型，自行下載後 (或是由 Windows 的 C:/Windows/Fonts/ 中複製)，放在以下 Ubuntu 的資料夾
+缺少的字體，下載後放在以下資料夾：
 
 ```
 /usr/local/share/fonts/
 ```
 
-若有缺少的 Package (.sty)，自行下載後放在與文件相同資料夾即可。
+**字型 Fonts**
 
-### Fonts
+建議另外安裝 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，並使用 XeLaTeX 針對不同的字型進行設定。
 
-中文的檔案，除了使用 Windows 和 Ubuntu 內建的字型之外，建議另外安裝 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，並使用 xeLaTex 針對不同的字型進行設定。
+---
 
-## Editor
+## 2. Editor
 
 ### TeXworks
 
@@ -69,7 +80,11 @@ sudo apt install texlive-full
 
 線上多人協同編輯與編譯器，缺點是編譯速度較慢。
 
-## Others
+---
+
+## 3. Others
+
+其他 LaTeX 相關的資源。
 
 ### IguanaTex
 
@@ -95,3 +110,9 @@ sudo apt install texlive-full
 
 ![](./pics//gif_2.gif)
 ![](./pics//gif_3.gif)
+
+## 在线 LaTeX 公式编辑器-妈叔出品
+
+參考 https://www.latexlive.com/
+
+Help 文件整理了 Equation 的一些符號與使用範例。
