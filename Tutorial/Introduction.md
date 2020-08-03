@@ -16,7 +16,7 @@
 
 ## 1. Install Compiler
 
-使用 LaTeX 需要一個編譯器，將使用者撰寫的指令稿編譯成 pdf 檔。對於英文文件來說，常用的編譯器是 pdflatex，但對中文文件來說，XeLaTeX 是最常用的編譯器。
+使用 LaTeX 製作文件需要編譯器，將使用者撰寫的指令稿編譯成 pdf 檔。對於英文文件來說，常用的編譯器是 pdflatex，但對中文文件來說，XeLaTeX 是最常用的編譯器。
 
 以下分為 Window 與 Linux 環境的安裝說明。
 
