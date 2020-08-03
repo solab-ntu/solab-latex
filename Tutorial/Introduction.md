@@ -32,6 +32,8 @@
 C:/Windows/Fonts/
 ```
 
+曾經遇過 ```\setCJKmainfont{cwTeXKai}``` 找不到字型，然後用 ```\setCJKmainfont{cwTeXKai.ttf}``` 就可以了，只能說 latex 的編譯環境是跟平台有關，而錯誤訊息又很難提供使用者除錯，需要使用者的經驗。
+
 ### Ubuntu
 
 安裝 texlive-full
