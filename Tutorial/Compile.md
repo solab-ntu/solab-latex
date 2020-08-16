@@ -6,7 +6,7 @@
 
 ## TeXworks
 
-工具列 File -> Preference 可以看到下圖視窗，可以看到編譯程式與順序。
+工具列 File -> Preference 可以看到下圖視窗，可以看到編譯程式與順序，點擊 Edit 可以看到是呼叫 texify.exe 而不是 pdflatex 等常見的編譯器。
 
 ![](./pics/Compile-texworks-setup.png)
 
@@ -25,20 +25,18 @@
 ![](./pics/Compile-vscode2.png)
 
 其內容可以參考下方或下一節 Terminal 命令。[參考](https://zhuanlan.zhihu.com/p/38178015)
+
 ```
 {
     "workbench.settings.editor": "json",
-    // https://zhuanlan.zhihu.com/p/38178015
     "latex-workshop.latex.tools": [
         {
-            // 编译工具和命令 
             "name": "xelatex",
             "command": "xelatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-pdf",
                 "%DOCFILE%"
             ]
         },
@@ -79,8 +77,10 @@
     ]
 }
 ```
+
 Recipes 第一個為預設，也可以將`xe->bib->xe->xe`放在第一個，但速度較慢。
 設定 wordWrap: open the command pallette (ctrl - shift - p), select Preferences: `Configure language specific settings...` and select the latex language. Then add the following:
+
 ```
 "[latex]": {
     "editor.wordWrap": "on"
@@ -89,7 +89,7 @@ Recipes 第一個為預設，也可以將`xe->bib->xe->xe`放在第一個，但�
 
 ## Terminal
 
-直接在 terminal 輸入命令進行編譯，主要使用 pdflatex 或是 xelatex。
+直接在 terminal 輸入命令進行編譯，主要使用 pdflatex 或是 xelatex，以下僅列出順序，選項可參考 vscode 設定。
 
 LaTeX 編譯器不支援增量編譯，因此當文件中有目錄或是引用文獻時，則需要 .toc 或 .aux 檔存在，因此根據文件內容的不同，有時會需要好幾次命令執行編譯。
 
@@ -111,4 +111,3 @@ bibtex   file.aux
 pdflatex file.tex
 pdflatex file.tex
 ```
-
