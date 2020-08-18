@@ -42,14 +42,10 @@ C:/Windows/Fonts/
 sudo apt install texlive-full
 ```
 
-缺少的字體，下載後放在以下資料夾：
+缺少的字體，下載後放在以下任一資料夾：
 
 ```
 /usr/local/share/fonts/
-```
-
-或是
-```
 ~/.local/share/fonts/
 ```
 
@@ -103,14 +99,6 @@ sudo apt install texlive-full
 
 ![](./pics/Intro-iguanatex2.png)
 
-### Ex­cel2LATEX
-
-參考 https://www.ctan.org/tex-archive/support/excel2latex
-
-在 Excel 內安裝 excel2latex 增益集，它提供將選取的儲存格轉成 LaTex 表格。
-
-![](./pics/UNKCihT.png)
-
 ### Mathpix
 
 參考 https://mathpix.com/
@@ -120,7 +108,15 @@ sudo apt install texlive-full
 ![](./pics//gif_2.gif)
 ![](./pics//gif_3.gif)
 
-## 在线 LaTeX 公式编辑器-妈叔出品
+### Ex­cel2LATEX
+
+參考 https://www.ctan.org/tex-archive/support/excel2latex
+
+在 Excel 內安裝 excel2latex 增益集，它提供將選取的儲存格轉成 LaTex 表格。
+
+![](./pics/UNKCihT.png)
+
+### 在线 LaTeX 公式编辑器-妈叔出品
 
 參考 https://www.latexlive.com/
 
