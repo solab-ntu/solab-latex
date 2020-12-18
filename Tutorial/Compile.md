@@ -28,13 +28,13 @@
 
 ```
 {
-    "workbench.settings.editor": "json",
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-                "-synctex=1",
+                // "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "%DOCFILE%"
@@ -60,21 +60,43 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
+            "name": "pdf-pdf",
             "tools": [
-                "xelatex"
+                "pdflatex",
+                "pdflatex"
             ]
         },
         {
-            "name": "xe->bib->xe->xe",
+            "name": "xe-bib-xe-xe",
             "tools": [
                 "xelatex",
                 "bibtex",
                 "xelatex",
                 "xelatex"
             ]
-        }
-    ]
+        },
+        {
+            "name": "pdf-bib-pdf-pdf",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ],
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+    ],
 }
 ```
 
