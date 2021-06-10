@@ -1,6 +1,6 @@
 # Introduction
 
-- Install Compiler
+- Compiler
     - [Windows](#Windows)
     - [Ubuntu](#Ubuntu)
 - Editor
@@ -14,7 +14,7 @@
 
 ---
 
-## 1. Install Compiler
+## 1. Compiler
 
 使用 LaTeX 製作文件需要編譯器，將使用者撰寫的指令稿編譯成 pdf 檔。對於英文文件來說，常用的編譯器是 pdflatex，但對中文文件來說，XeLaTeX 是最常用的編譯器。
 
@@ -42,16 +42,19 @@ C:/Windows/Fonts/
 sudo apt install texlive-full
 ```
 
-缺少的字體，下載後放在以下任一資料夾：
+**字體 Fonts**
 
+針對楷體可以下載 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，從下方說明找到下載 TTF 的連結。如果想使用微軟的楷體，可以從 Window 系統複製字體檔後，透過下述流程安裝。
+
+如果是透過系統安裝字體，則通常會放在 `/usr/local/share/fonts/`，如果是要放在使用者家目錄底下，則是放在 `~/.local/share/fonts/`。
+
+新增了字體後，要使用以下命令更新系統。
+
+```bash
+sudo fc-cache
 ```
-/usr/local/share/fonts/
-~/.local/share/fonts/
-```
 
-**字型 Fonts**
-
-建議另外安裝 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，並使用 XeLaTeX 針對不同的字型進行設定。
+建議安裝 `fonts-manager` 來預覽字體內容。
 
 ---
 
