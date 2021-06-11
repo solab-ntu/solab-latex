@@ -31,11 +31,21 @@
 
 ### 1.2 Ubuntu
 
-安裝 texlive-full
+透過下列命令安裝 texlive-full
 
 ```bash
 sudo apt install texlive-full
 ```
+
+亦可只安裝所需的部份
+
+``` bash
+sudo apt install texlive-base texlive-bibtex-extra texlive-lang-chinese \
+    texlive-lang-cjk texlive-latex-extra texlive-pstricks \
+    texlive-science texlive-xetex
+```
+
+但如有遇到缺少 Package 的情形，要自行安裝。
 
 ## 2. Fonts
 
@@ -43,7 +53,7 @@ sudo apt install texlive-full
 
 ### 2.1 Windows
 
-有自己想用的字體，則可以下載後放在以下資料夾：
+若有其他字體，則下載後放在以下資料夾：
 
 ```
 C:/Windows/Fonts/
@@ -53,7 +63,7 @@ C:/Windows/Fonts/
 
 ### 2.2 Ubuntu
 
-在有桌面環境下的 Linux，建議安裝 `font-manager` 來預覽字體內容。
+建議安裝 `font-manager` 來預覽字體內容。
 
 如果想使用微軟的字體，可從 Window 系統複製字體檔後，放在以下資料夾中：
 1. 系統：`/usr/local/share/fonts/`
@@ -67,9 +77,9 @@ sudo fc-cache
 
 透過 `font-manager` 去查看系統內字體的名稱，有時不一定跟檔名相同。
 
-Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，所以理論上不會影響 UI，如果是其他 Distro 的使用者則要查一下 Linux 系統的 fontconfig 設定。
+Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，所以理論上不會影響系統 UI，如果是其他 Distro 的使用者則要查一下 fontconfig 設定。
 
-如果不想新增系統的字體，也可以在文件中，直接指定路徑的字體檔，舉例來說，我將微軟的 Time New Roman 與標楷體放在文件目錄下的 `Fonts` 資料夾內，則設定如下：
+如果不想新增系統的字體，也可以在文件內直接指定路徑的字體檔。舉例來說，我將微軟的 Time New Roman 與標楷體放在文件目錄下的 `Fonts` 資料夾內，則設定如下：
 
 ```
 \setmainfont[Path="./Fonts/times_new_Roman/"]{Times New Roman}
