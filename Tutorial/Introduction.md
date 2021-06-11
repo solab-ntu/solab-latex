@@ -1,6 +1,9 @@
 # Introduction
 
-- Install Compiler
+- Compiler
+    - [Windows](#Windows)
+    - [Ubuntu](#Ubuntu)
+- Fonts
     - [Windows](#Windows)
     - [Ubuntu](#Ubuntu)
 - Editor
@@ -14,27 +17,19 @@
 
 ---
 
-## 1. Install Compiler
+## 1. Compiler
 
 使用 LaTeX 製作文件需要編譯器，將使用者撰寫的指令稿編譯成 pdf 檔。對於英文文件來說，常用的編譯器是 pdflatex，但對中文文件來說，XeLaTeX 是最常用的編譯器。
 
-以下分為 Window 與 Linux 環境的安裝說明。
+以下分為 Window 與 Ubuntu 環境的安裝說明。
 
-### Windows
+### 1.1 Windows
 
 安裝 MiKTeX ( https://miktex.org/download )
 
 編譯文件的過程中若有缺少的 Package (.sty)，MikTex 會顯示安裝提示。若是自行下載的 Package，則放在與文件相同資聊夾下即可。
 
-缺少的字體，下載後放在以下資料夾：
-
-```
-C:/Windows/Fonts/
-```
-
-曾經遇過 ```\setCJKmainfont{cwTeXKai}``` 找不到字型，然後用 ```\setCJKmainfont{cwTeXKai.ttf}``` 就可以了，只能說 latex 的編譯環境是跟平台有關，而錯誤訊息又很難提供使用者除錯，需要使用者的經驗。
-
-### Ubuntu
+### 1.2 Ubuntu
 
 安裝 texlive-full
 
@@ -42,16 +37,46 @@ C:/Windows/Fonts/
 sudo apt install texlive-full
 ```
 
-缺少的字體，下載後放在以下任一資料夾：
+## 2. Fonts
+
+字體是有版權的，但由於我們是寫學術論文，一般不構成侵權。
+
+### 2.1 Windows
+
+有自己想用的字體，則可以下載後放在以下資料夾：
 
 ```
-/usr/local/share/fonts/
-~/.local/share/fonts/
+C:/Windows/Fonts/
 ```
 
-**字型 Fonts**
+曾經遇過 ```\setCJKmainfont{cwTeXKai}``` 找不到字型，然後用 ```\setCJKmainfont{cwTeXKai.ttf}``` 就可以了。
 
-建議另外安裝 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts )，並使用 XeLaTeX 針對不同的字型進行設定。
+### 2.2 Ubuntu
+
+在有桌面環境下的 Linux，建議安裝 `font-manager` 來預覽字體內容。
+
+如果想使用微軟的字體，可從 Window 系統複製字體檔後，放在以下資料夾中：
+1. 系統：`/usr/local/share/fonts/`
+2. 家目錄：`~/.local/share/fonts/`
+
+新增了字體後，使用下列命令進行更新。
+
+```bash
+sudo fc-cache
+```
+
+透過 `font-manager` 去查看系統內字體的名稱，有時不一定跟檔名相同。
+
+Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，所以理論上不會影響 UI，如果是其他 Distro 的使用者則要查一下 Linux 系統的 fontconfig 設定。
+
+如果不想新增系統的字體，也可以在文件中，直接指定路徑的字體檔，舉例來說，我將微軟的 Time New Roman 與標楷體放在文件目錄下的 `Fonts` 資料夾內，則設定如下：
+
+```
+\setmainfont[Path="./Fonts/times_new_Roman/"]{Times New Roman}
+\setCJKmainfont[Path="./Fonts/windows_style/"]{kaiu}
+```
+
+另外，專案 cwtex-q-fonts ( https://github.com/l10n-tw/cwtex-q-fonts ) 有一些標楷體的替代品，在下方說明可以找到下載 TTF 的連結。
 
 ---
 
@@ -115,9 +140,3 @@ sudo apt install texlive-full
 在 Excel 內安裝 excel2latex 增益集，它提供將選取的儲存格轉成 LaTex 表格。
 
 ![](./pics/UNKCihT.png)
-
-### 在线 LaTeX 公式编辑器-妈叔出品
-
-參考 https://www.latexlive.com/
-
-Help 文件整理了 Equation 的一些符號與使用範例。
