@@ -21,8 +21,11 @@ sudo apt install texlive-full
 如果硬碟不夠大，可以先安裝所需的部份
 
 ``` bash
-sudo apt install texlive-base texlive-bibtex-extra texlive-lang-chinese \
-    texlive-lang-cjk texlive-latex-extra texlive-pstricks \
+sudo apt install texlive-base texlive-binaries texlive-font-utils \
+    texlive-fonts-recommended texlive-lang-chinese texlive-lang-cjk \
+    texlive-lang-japanese texlive-lang-korean texlive-lang-other \
+    texlive-latex-base texlive-latex-extra texlive-latex-recommended \
+    texlive-pstricks texlive-pictures texlive-plain-generic \
     texlive-science texlive-xetex
 ```
 
