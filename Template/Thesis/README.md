@@ -1,7 +1,7 @@
 Introduction for thesis
 ===
 
-與之前 Template 採用的編譯器(PdfLaTex)不同， Thesis 是採用 XeLaTex 編譯，這邊需要多做一些設定。
+與之前 Template 採用的編譯器 pdflatex 不同， Thesis 是採用 xelatex 編譯，這邊需要多做一些設定。
 
 Windows
 ---
