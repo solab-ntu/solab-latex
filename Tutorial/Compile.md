@@ -45,11 +45,13 @@ pdflatex filename.tex
 
 在 Windows 使用 Miktex 預設使用 TeXworks 作為編輯器，在工具列 File -> Preference 可以看到下圖視窗，可以看到編譯程式與順序，點擊 Edit 可以看到是呼叫 texify.exe，估計是此程式會更據選項的不同，而去呼叫編譯器。
 
-![](./pics/Compile-texworks-setup.png)
+|![](./pics/Compile-texworks-setup.png)|
+|:-:|
 
 點擊主程式下圖按鈕可以開始編譯文件。
 
-![](./pics/Compile-texworks-start.png)
+|![](./pics/Compile-texworks-start.png)|
+|:-:|
 
 ---
 
@@ -57,11 +59,13 @@ pdflatex filename.tex
 
 按下 Ctrl+Shift+P 執行命令，執行 LaTeX Workshop: Build LaTeX project。
 
-![](./pics/Compile-vscode1.png)
+|![](./pics/Compile-vscode1.png)|
+|:-:|
 
 其編譯程序可以打開 settings.json 設定，如下圖 latex-workshop.latex.tools 與 latex-workshop.latex.recipes 兩個變數。
 
-![](./pics/Compile-vscode2.png)
+|![](./pics/Compile-vscode2.png)|
+|:-:|
 
 其內容可以參考下方或下一節 Terminal 命令。[參考](https://zhuanlan.zhihu.com/p/38178015)
 

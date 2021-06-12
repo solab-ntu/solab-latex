@@ -30,6 +30,5 @@ SOLab Latex 教材、風格與範本文件。
     - ASME Journal
 - [Review](./Template/Review)
 - Thesis
-    - [Chinese](./Template/Thesis/README.md)
-    - [English](./Template/Thesis/English/README.md)
-
+    - [Chinese](./Template/Thesis/)
+    - [English](./Template/Thesis/English)

@@ -91,7 +91,8 @@ Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因
 
 在 Windows 安裝 MiKTeX 會自動安裝 Texworks。
 
-![Intro-texworks](./pics/Intro-texworks.png)
+|![Intro-texworks](./pics/Intro-texworks.png)|
+|:-:|
 
 ### 3.2 VSCode
 
@@ -99,19 +100,27 @@ Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因
 
 開啟 extension 搜尋 Latex Workshop 並安裝，此擴充套件提供 VSCode 呼叫編譯器、語法顏色、自動補全等功能。
 
-![Intro-vscode](./pics/Intro-vscode.png)
+|![Intro-vscode](./pics/Intro-vscode.png)|
+|:-:|
 
 ### 3.3 Vim
 
 下圖使用 vim 編輯、使用 okular 瀏覽 pdf，手動輸入命令進行編譯。
 
-![Intro-vscode](./pics/Intro-vim.png)
+|![Intro-vscode](./pics/Intro-vim.png)|
+|:-:|
 
 ### 3.4 Overleaf
 
 參考 https://www.overleaf.com/
 
 線上多人協同編輯與編譯器，缺點是編譯速度較慢。
+
+注意在網頁左上角的 Menu 可以更改 Compile，如下圖
+
+|![](./pics/overleaf-menu1.png)|
+|:-:|
+|![](./pics/overleaf-menu2.png)|
 
 ---
 
@@ -125,7 +134,8 @@ Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因
 
 在 Windows 作業系統下安裝了 Miktex 與 PowerPoint 後，可以在 PowerPoint 安裝 IguanaTex 增益集，它提供了在投影片中插入 LaTeX 方程式的功能。注意安裝完成後，還需要安裝 GhostScript 與 ImageMagick，並修改 IguanaTex 相關設定，如下圖。
 
-![](./pics/Intro-iguanatex2.png)
+|![](./pics/Intro-iguanatex2.png)|
+|:-:|
 
 ### 4.2 Mathpix
 
@@ -133,8 +143,9 @@ Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因
 
 辨識方程式圖片，轉成 latex script，跨平台、目前還沒看到收費。
 
-![](./pics//gif_2.gif)
-![](./pics//gif_3.gif)
+|![](./pics//gif_2.gif)|
+|:-:|
+|![](./pics//gif_3.gif)|
 
 ### 4.3 Ex­cel2LATEX
 
@@ -142,4 +153,5 @@ Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因
 
 在 Excel 內安裝 excel2latex 增益集，它提供將選取的儲存格轉成 LaTex 表格。
 
-![](./pics/UNKCihT.png)
+|![](./pics/UNKCihT.png)|
+|:-:|
