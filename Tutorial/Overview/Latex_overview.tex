@@ -12,12 +12,12 @@
 \usepackage{subfigure}
 \usepackage{color}
 \usepackage{bm}
-\usepackage{multirow} 
+\usepackage{multirow}
 \usepackage{bigdelim}
 \usepackage{booktabs}
 %\usepackage[]{mcode}
 
-% % line spacing 
+% % line spacing
 
 \newlength{\defbaselineskip}
 \setlength{\defbaselineskip}{\baselineskip}
@@ -90,7 +90,7 @@
 		\begin{verbatim}
 			\documentclass[字體,紙張大小]{文章種類}  %類別設定
 			基本(環境)設定區                        	%巨集套件
-			\begin{document} 
+			\begin{document}
 			文章內容
 			\end{document}
 		\end{verbatim}
@@ -116,11 +116,36 @@
 下面簡介幾個較常使用的套件：
 
 \begin{enumerate}
-\item 中文編輯(CJKutf8)\\
-若要編輯中文文章皆須使用這個套件。
-\item AMS-LaTeX(amsmath, amsfonts, amssymb)\\
+\item 中文編輯\\
+若使用 pdflatex 作為編譯器，要編輯中文文件皆須使用這個套件，其中大多數的 TexLive 中，都有安裝 bsmi (明體)、bkai (楷書) 字型。
+\begin{framed}
+	\begin{verbatim}
+		\usepackage{CJKutf8}
+		.
+		.
+		\begin{document}
+		\begin{CJK}{UTF8}{bkai}
+		.
+		.
+		\end{CJK}
+		\end{document}
+	\end{verbatim}
+\end{framed}
+
+若使用 xelatex 作為編譯器，則要確認系統中是否有安裝對應的字體。
+\begin{framed}
+	\begin{verbatim}
+		\usepackage{xeCJK}
+		.
+		.
+		\setCJKmainfont{DFKai-SB}
+		\setmainfont{Times New Roman}
+	\end{verbatim}
+\end{framed}
+
+\item AMS-LaTeX (amsmath, amsfonts, amssymb)\\
 LaTeX本身就有編輯數學式的能力，這個套件主要在加強數學式編輯能力的巨集套件。
-\item 紙張與邊界設定(geometry)\\
+\item 紙張與邊界設定 (geometry)\\
 geometry這個套件需要而外在前面輸入你要設定的參數如下：
 
 	\begin{framed}
@@ -135,11 +160,11 @@ left=2.5cm：將左邊界設定為2.5公分\\
 right=2.5cm：將右邊界設定為2.5公分\\
 top=2.5cm：將上邊界設定為2.5公分\\
 bottom=2.5cm：將下邊界設定為2.5公分
-\item 圖片(graphicx)\\
+\item 圖片 (graphicx)\\
 當文章中需要插入圖片時就需要使用這個套件。
-\item 表格畫線(hhline)\\
+\item 表格畫線 (hhline)\\
 這個巨集可以使插入表格時畫線更方便。
-\item 數學式粗體(bm)\\
+\item 數學式粗體 (bm)\\
 用了這個套件可以增加一個指令\verb|\bm{}|，將數學式置於大括號內就可以粗體顯示。
 \end{enumerate}
 
@@ -352,7 +377,7 @@ bottom=2.5cm：將下邊界設定為2.5公分
 			\caption{minions}
 			\label{minions}
 			\end{figure}\\
-			由圖\ref{minions}我們可以得到下面結論blahblahblah... 
+			由圖\ref{minions}我們可以得到下面結論blahblahblah...
 		\end{verbatim}
 	\end{framed}
 
@@ -397,7 +422,7 @@ bottom=2.5cm：將下邊界設定為2.5公分
 	遞迴式：$a_{n+1}=3\,a_n+0.5^n+0.2n$
 	\begin{framed}
 		\begin{verbatim}
-			a_{n+1}=3\,a_n+0.5^n+0.2n 
+			a_{n+1}=3\,a_n+0.5^n+0.2n
 		\end{verbatim}
 	\end{framed}
 
@@ -513,13 +538,13 @@ bottom=2.5cm：將下邊界設定為2.5公分
 \item \verb|\begin{displaymath} 數學式 \end{displaymath}|\\
 	\\The answer of $ax^2+bx+c$ :
 	\begin{displaymath}
-	x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a} 
+	x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
 	\end{displaymath}
 	\begin{framed}
 		\begin{verbatim}
 			The answer of $ax^2+bx+c$ :
 			\begin{displaymath}
-				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a} 
+				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
 			\end{displaymath}
 		\end{verbatim}
 	\end{framed}
@@ -527,12 +552,12 @@ bottom=2.5cm：將下邊界設定為2.5公分
 
 \item \verb|\begin{equation} 數學式 \end{equation}|：這是有方程式編號的數學式。如果要取消方程式編號，則可以使用 \verb|equation*| 。
 	\begin{equation}
-		x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}  
+		x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
 	\end{equation}
 	\begin{framed}
 		\begin{verbatim}
 			\begin{equation}
-				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}  
+				x_1,x_2 = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
 			\end{equation}
 		\end{verbatim}
 	\end{framed}
@@ -555,7 +580,7 @@ bottom=2.5cm：將下邊界設定為2.5公分
 	\begin{verbatim}
 		\begin{equation}
 		\begin{array}{ccc}
-		a & b & c \\  
+		a & b & c \\
 		d & e& f \\
 		g & h & i
 		\end{array}
@@ -578,7 +603,7 @@ bottom=2.5cm：將下邊界設定為2.5公分
 	d & e& f \\
 	g & h & i
 	\end{array}
-	\right. 
+	\right.
 	\label{eq:leftright}
 	\end{equation}
 
@@ -599,17 +624,17 @@ bottom=2.5cm：將下邊界設定為2.5公分
 		d & e& f \\
 		g & h & i
 		\end{array}
-		\right. 
+		\right.
 	\end{equation}
 	\end{verbatim}
 	\end{framed}
 使用上述方法，可以簡單的寫出分段方程式：
 \begin{equation}
-f(x) = 
+f(x) =
 \left\{
 	\begin{array}{ccc}
 	ax+b & , & x\ge 0 \\
-	cx+d & , & x< 0 
+	cx+d & , & x< 0
 	\end{array}
 \right.
 \end{equation}
@@ -617,11 +642,11 @@ f(x) =
 \begin{framed}
 \begin{verbatim}
 \[
-f(x) = 
+f(x) =
 \left\{
 	\begin{array}{ccc}
 	ax+b & , & x\ge 0 \\
-	cx+d & , & x< 0 
+	cx+d & , & x< 0
 	\end{array}
 \right.
 \]
@@ -695,7 +720,7 @@ f(x) =\quad & x^2-(a+b)x+ab\\
 	\begin{equation}
 	f(x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 	\end{equation}
-	
+
 	\item 試打出一般最佳化方程式\\
 	\begin{align}
 	\begin{split}
