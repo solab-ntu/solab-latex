@@ -1,4 +1,4 @@
-# Compile
+# Compiler
 
 使用 LaTeX 製作文件需要編譯器，將使用者撰寫的指令稿編譯成 pdf 檔。
 
@@ -143,7 +143,8 @@ pdflatex filename.tex
 }
 ```
 
-Recipes 第一個為預設，也可以將`xe->bib->xe->xe`放在第一個，但速度較慢。
+Recipes 第一個為預設。
+
 設定 wordWrap: open the command pallette (ctrl - shift - p), select Preferences: `Configure language specific settings...` and select the latex language. Then add the following:
 
 ```

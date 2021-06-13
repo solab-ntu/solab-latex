@@ -5,7 +5,7 @@ SOLab Latex 教材、風格與範本文件。
 ## Tutorial
 
 - [Introduction](./Tutorial/Introduction.md)
-- [Compile](./Tutorial/Compile.md)
+- [Compiler](./Tutorial/Compiler.md)
 - [Overview](./Tutorial/Overview/)
 - [Basic and Text Adjustment](./Tutorial/Basic/)
 - [Equation and Debug](./Tutorial/Equation/)
