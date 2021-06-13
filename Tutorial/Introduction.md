@@ -2,7 +2,7 @@
 
 ## 1. Install
 
-以下分為 Window 與 Ubuntu 環境的安裝說明。
+以下分為 Window 與 Linux 環境的安裝說明。
 
 ### 1.1 Windows
 
@@ -10,7 +10,9 @@
 
 編譯文件的過程中若有缺少的 Package (.sty)，MikTex 會顯示安裝提示。若是自行下載的 Package，則放在與文件相同資聊夾下即可。
 
-### 1.2 Ubuntu
+### 1.2 Linux
+
+#### Ubuntu
 
 透過下列命令安裝 texlive-full
 
@@ -31,6 +33,14 @@ sudo apt install texlive-base texlive-binaries texlive-font-utils \
 
 之後如有遇到缺少 Package 的情形，則自行安裝。
 
+#### Arch Linux
+
+```bash
+sudo pacman -S texlive-bibtexextra texlive-bin texlive-core \
+    texlive-langchinese texlive-langextra texlive-latexextra \
+    texlive-pstrick texlive-science texlive-pictures
+```
+
 ---
 
 ## 2. Fonts
@@ -45,19 +55,17 @@ sudo apt install texlive-base texlive-binaries texlive-font-utils \
 C:/Windows/Fonts/
 ```
 
-曾經遇過 ```\setCJKmainfont{cwTeXKai}``` 找不到字型，然後用 ```\setCJKmainfont{cwTeXKai.ttf}``` 就可以了。
+曾經遇過 ```\setCJKmainfont{cwTeXKai}``` 找不到字型，然後用 ```\setCJKmainfont{cwTeXKai.ttf}``` 就可以。
 
-### 2.2 Ubuntu
+### 2.2 Linux
 
 建議安裝 `font-manager` 來預覽字體內容。
 
-以下說明主要針對 xelatex 編譯器。
-
-如果想使用微軟的字體，可從 Window 系統複製字體檔後，放在以下資料夾中：
+pdflatex 大多數有內建楷體 (bkai) 與明體 (bsmi)，但也可以自行替換字體，以下主要針對 xelatex，如果想使用微軟的字體，可從 Window 系統複製字體檔後，放在以下資料夾中：
 1. 系統：`/usr/local/share/fonts/`
 2. 家目錄：`~/.local/share/fonts/`
 
-新增了字體後，使用下列命令進行更新。
+新增了字體後，使用下列命令進行更新系統索引。
 
 ```bash
 sudo fc-cache
@@ -65,9 +73,9 @@ sudo fc-cache
 
 透過 `font-manager` 去查看系統內字體的名稱，有時字體名稱不一定跟檔名相同。
 
-Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因此理論上不會影響系統 UI 的字體，如果是其他 Distro 的使用者則要查一下 fontconfig 設定。
+Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因此理論上不會影響系統 UI 的字體，但如果是其他 Distro 的使用者則要查一下 fontconfig 設定。
 
-如果不想新增系統的字體，也可以直接在文件內指定路徑的字體檔。舉例來說，我將微軟的 Time New Roman 與標楷體放在文件目錄下的 `fonts` 資料夾內，則設定如下：
+如果不想新增系統的字體，也可以直接在文件內指定路徑的字體檔，如下，我將微軟的 Times New Roman 與標楷體放在文件目錄下的 `fonts` 資料夾內，則設定如下：
 
 ```
 \setCJKmainfont[Path="./fonts/"]{kaiu}
