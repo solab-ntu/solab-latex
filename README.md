@@ -21,7 +21,6 @@ SOLab Latex 教材、風格與範本文件。
 
 ## Template
 
-- [Comment](./Template/Comment)
 - [Homework](./Template/Homework)
 - [Meeting Note](./Template/Meeting_Note)
 - Paper
