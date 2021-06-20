@@ -1,25 +1,33 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt]{article}
 
+% \usepackage{extsizes}  % 字體文件使用 14pt
 \usepackage{CJKutf8}
 \usepackage[margin=2.0cm]{geometry}
-\usepackage{fancyhdr}
+\usepackage{fancyhdr}  % 頁首、頁尾
+\usepackage{graphicx}
 \usepackage{amsmath, amssymb, amsfonts}
-\usepackage{listings} % code showing
-\usepackage{pagecolor} % for code color define
-\usepackage{tocloft}
+\usepackage{listings}  % code showing
+\usepackage{pagecolor}  % for code color define
+\usepackage{tocloft}  % contents
 
-% -- 段落格式
-\setlength{\headheight}{28pt}
-\pagestyle{fancy}
+% -- 格式
+\pagestyle{fancy}  % 使用 header
 \fancyhf{}
-\setlength\parindent{0pt}
-\setlength{\parskip}{0.5em}
-\setcounter{secnumdepth}{-1}
+\setcounter{secnumdepth}{-1}  % 移除 section 數字
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-% -- 圖, 表標題使用中文取代
+%% -- 標題使用中文取代
 \renewcommand{\figurename}{圖}
 \renewcommand{\tablename}{表}
+\renewcommand{\lstlistingname}{程式碼}
+
+%% -- 間距設定
+% \linespread{1.2}\selectfont  % 行距
+\setlength{\headheight}{29pt}
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.5em}
+\setlength{\abovecaptionskip}{10pt}  % 圖表標題 caption 與圖表的距離
+\setlength{\belowcaptionskip}{10pt}
 
 % -- 顯示程式碼格式
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -51,20 +59,23 @@
 \begin{document}
 \begin{CJK}{UTF8}{bkai}
 
-\chead{\textbf{Homework 1}}
-\lhead{Course}
-\rhead{Name1\\ Name2}
+\chead{\normalsize \textbf{Homework 1}}  % 可調整大小
+\lhead{\normalsize 課程名稱}
+\rhead{\normalsize R0xxxxxxx 姓名\\ R0xxxxxxx 姓名}
 \cfoot{\thepage}
-
-\ ~ \
 
 \tableofcontents\thispagestyle{fancy}
 
+% ---------------------------------------------
+
 \section{Problem 1}
+
+問題描述
 
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 
 \subsection*{Solution}
+
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 \begin{equation*}
     a = \sum_{i=1}^{10} k_i
@@ -72,11 +83,26 @@
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 
 測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
+
 \clearpage
 \section{Problem 2}
 
-\lstinputlisting[language=Python, firstline=5, lastline=7, firstnumber=5]{./code.py}
-\lstinputlisting[language=Python, caption=demo, label=code:dwmo]{./code.py}
+問題描述
+
+\subsection*{Solution}
+
+只顯示檔案中的片段，如程式碼 \ref{code:demo:snippet}。
+
+\lstinputlisting[
+    language=Python, firstline=5, lastline=7, firstnumber=5,
+    caption={for 迴圈}, label={code:demo:snippet}
+]{./code.py}
+
+顯示檔案內所有文字，如程式碼 \ref{code:demo:all}。
+
+\lstinputlisting[
+    language=Python, caption={範例}, label={code:demo:all}
+]{./code.py}
 
 根據文獻 \cite{Chen2017b}
 
@@ -87,13 +113,19 @@
 \clearpage
 \section{Problem 3}
 
+asdasd
+
+\textsf{asdasd}
+
+\texttt{asdasd}
+
 \clearpage
 \section{Problem 4}
 
 \clearpage
 \section{References}
-% -- 隱藏預設參考文獻標題
-\begingroup
+
+\begingroup  % 隱藏預設參考文獻標題
     \renewcommand{\section}[2]{}
     \bibliographystyle{ieeetr}
     \bibliography{ref.bib}

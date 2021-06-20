@@ -32,7 +32,7 @@
 % 期刊雜誌的論文
 
 @article{label,
-  author   = {P. Adams}, 
+  author   = {P. Adams},
   title    = {The title of the work},
   journal  = {The name of the journal},
   year     = 1993,
@@ -43,8 +43,8 @@
 }
 ```
 
--  J. Wu, J. Wang, and Z. You, “An overview of dynamic parameter identification of robots.” Robotics and Computer-Integrated Manufacturing, vol. 26, no. 5, pp. 414–419, 2010.
--  A. Bittencourt and P. Axelsson, “Modeling and experiment design for identification of wear in a robot joint under load and temperature uncertainties based on friction data.” IEEE/ASME Transactions on Mechatronics, vol. 19, pp. 1694–1706, Oct 2014.
+-  J. Wu, J. Wang, and Z. You, “An overview of dynamic parameter identification of robots.” _Robotics and Computer-Integrated Manufacturing_, vol. 26, no. 5, pp. 414–419, 2010.
+-  A. Bittencourt and P. Axelsson, “Modeling and experiment design for identification of wear in a robot joint under load and temperature uncertainties based on friction data.” _IEEE/ASME Transactions on Mechatronics_, vol. 19, pp. 1694–1706, Oct 2014.
 
 ```bibtex
 % 未出版的論文，圖書
@@ -52,14 +52,14 @@
 % 必須將所有能幫助讀者找到文獻的資訊都放在 note
 
 @unpublished{label,
-  author  = {P. Marcheford}, 
+  author  = {P. Marcheford},
   title   = {The title of the work},
   note    = {An optional note},
   month   = 7,
   year    = 1993
 }
 ```
-    
+
 - I. H. Spud, "Constrastive analysis: A comparison of Pig Latin and English." Unpublished manuscript, 1999.
 - A. Nala, "Teaching vocabulary: Evidence from research in Pig Latin." Unpublished manuscript, Brigham Young University, Provo, UT., 1998.
 - F. Roosevelt, "Childhood acquisition of Pig Latin by native speakers of English." Manuscript submitted for publication, 1997.
@@ -73,7 +73,7 @@
 
 @inproceedings(or @conference){label,
   address    = {Location},
-  author     = {P. Draper}, 
+  author     = {P. Draper},
   title      = {The title of the work},
   booktitle  = {The title of the book},
   year       = 1993,
@@ -92,7 +92,7 @@
 % 碩士論文
 
 @mastersthesis{label,
-  author   = {P. Harwood}, 
+  author   = {P. Harwood},
   title    = {The title of the work},
   school   = {The school of the thesis},
   address  = {The address of the publisher},
@@ -100,13 +100,13 @@
   month    = 7,
 }
 ```
-- V. Nannen, "The Paradox of Overfitting." Master’s thesis, Rijksuniversiteit Gronin-gen, the Netherlands, 2003.
+- V. Nannen, "The Paradox of Overfitting." Master’s thesis, _Rijksuniversiteit Gronin-gen, the Netherlands_, 2003.
 
 ```bibtex
 % 博士論文
 
 @phdthesis{label,
-  author   = {P. Joslin}, 
+  author   = {P. Joslin},
   title    = {The title of the work},
   school   = {The school of the thesis},
   address  = {The address of the publisher},
@@ -115,7 +115,7 @@
 }
 ```
 
-- V. Nannen, _The Paradox of Overfitting._ PhD thesis, Rijksuniversiteit Groningen, the Netherlands, 2003.
+- V. Nannen, "The Paradox of Overfitting." PhD thesis, _Rijksuniversiteit Groningen, the Netherlands_, 2003.
 
 
 ### 技術報告 Technique Report
@@ -124,7 +124,7 @@
 % 教育、商業機構的技術報告
 
 @techreport{label,
-  author     = {P. Lambert}, 
+  author     = {P. Lambert},
   title      = {The title of the work},
   publisher  = {Profanity Institute},
   address    = {New York NY},
@@ -144,7 +144,7 @@
 
 @manual{label,
   title        = {The title of the work},
-  author       = {P. Gainsford}, 
+  author       = {P. Gainsford},
   organization = {The organization},
   address      = {The address of the publisher},
   edition      = 3,
@@ -160,7 +160,7 @@
 % 公開出版的圖書
 
 @book{book,
-  author    = {P. Babington}, 
+  author    = {P. Babington},
   title     = {The title of the work},
   publisher = {The name of the publisher},
   year      = 1993,
@@ -179,7 +179,7 @@
 
 @booklet{booklet,
   title        = {The title of the work},
-  author       = {P. Caxton}, 
+  author       = {P. Caxton},
   howpublished = {How it was published},
   address      = {The address of the publisher},
   month        = 7,
@@ -192,7 +192,7 @@
 % 書籍的一部分章節
 
 @inbook{inbook,
-  author       = {P. Eston}, 
+  author       = {P. Eston},
   title        = {The title of the work},
   chapter      = 8,
   pages        = {201-213},
@@ -211,7 +211,7 @@
 % 書籍中帶獨立標題的章節
 
 @incollection{incollection,
-  author       = {P. Farindon}, 
+  author       = {P. Farindon},
   title        = {The title of the work},
   booktitle    = {The title of the book},
   publisher    = {The name of the publisher},
@@ -249,7 +249,7 @@
 %     - Retrieved month day, year
 
 @misc{label,
-  author        = {P. Isley}, 
+  author        = {P. Isley},
   title         = {The title of the work},
   howpublished  = {How it was published},
   month         = 7,
