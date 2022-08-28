@@ -75,7 +75,7 @@ sudo fc-cache
 
 Ubuntu 將 `Noto Sans CJK` 字體的順位放在 user-defined 字體之前，因此理論上不會影響系統 UI 的字體，但如果是其他 Distro 的使用者則要查一下 fontconfig 設定。
 
-如果不想新增系統的字體，也可以直接在文件內指定路徑的字體檔，如下，我將微軟的 Times New Roman 與標楷體放在文件目錄下的 `fonts` 資料夾內，則設定如下：
+若不想新增系統的字體，也可以直接在文件內指定字體檔路徑，如下設定，我將微軟的 Times New Roman 與標楷體放在文件目錄下的 `fonts` 資料夾內，並使用 Path 來指定檔案位置。
 
 ```
 \setCJKmainfont[Path="./fonts/"]{kaiu}
